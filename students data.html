@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students Data</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .auto-style1 {
+      font-family: "Comic Sans MS";
+    }
+
+    /* Wrapper to center heading and container */
+    .students-container-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    /* Heading Styles */
+    .students-heading {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 35px;
+      width: 100%;
+    }
+
+    /* Container for years */
+    .students-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 columns */
+      gap: 15px;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    /* Year boxes */
+    .student-year {
+      padding: 10px;
+      background-color: yellow;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .student-year a {
+      text-decoration: none;
+      color: black;
+      display: block;
+    }
+
+    .student-year:hover {
+	    background-color: green;
+	    transform: scale(1.05);
+	    box-shadow: 
+        0 0 5px #0f0,  /* Green */
+        2px 2px 10px #0f0, /* Slightly offset green */
+        -2px -2px 10px #0f0, /* Slightly offset green (opposite direction) */
+        0 0 15px #0f0, /* Brighter green */
+        4px 4px 20px #0f0, /* More offset, brighter green */
+        -4px -4px 20px #0f0; /* More offset, brighter green (opposite direction) */
+	}
+	
+	/* Total number below table */
+	.total-students {
+	    text-align: center;
+	    font-size: 18px;
+	    font-weight: bold;
+	    margin-top: 10px;
+	    padding-top: 10px;
+	    color: red; /* Red text */
+	}
+	.auto-style2 {
+	  text-align: center;
+	  font-size: 18px;
+	  font-weight: bold;
+	  margin-top: 10px;
+	  padding-top: 10px;
+	  color: red;
+	  font-family: Papyrus;
+  }
+  .auto-style3 {
+	  text-align: center;
+	  font-size: 1.8rem;
+	  font-weight: bold;
+	  margin-bottom: 35px;
+	  width: 100%;
+	  font-family: "Imprint MT Shadow";
+	  color: #FFFF00;
+	  background-color: #000000;
+  }
+	</style>
+</head>
+<body>
+  <header>
+    <a href="index.html" aria-label="Home">
+      <img src="images/logo.png" alt="CCA Lab Logo" class="logo">
+    </a>
+    <div class="title-buttons-container">
+      <h1 class="auto-style1">Course in Computer Application (CCA LAB)</h1>
+      <div class="button-container">
+        <a href="index.html">Home</a>
+        <a href="course materials.html">Course Materials</a>
+        <a href="students data.html">Students Data</a>
+        <a href="results.html">Results</a>
+        <a href="photo gallery.html">Photo Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="social-media">
+      <a href="https://www.facebook.com/chamaokadena" target="_blank" aria-label="Facebook">
+        <img src="images/facebook-icon.png" alt="Facebook" class="social-icon">
+      </a>
+      <a href="https://www.instagram.com/kidzy_chamz/" target="_blank" aria-label="Instagram">
+        <img src="images/instagram-icon.png" alt="Instagram" class="social-icon">
+      </a>
+      <a href="https://www.youtube.com/@kidzychamz-3187" target="_blank" aria-label="YouTube">
+        <img src="images/youtube-icon.png" alt="YouTube" class="social-icon">
+      </a>
+      <a href="mailto:kidzyck@gmail.com" aria-label="Gmail">
+        <img src="images/gmail-icon.png" alt="Gmail" class="social-icon">
+      </a>
+    </div>
+  </header>
+  
+  <main>
+    <div class="students-container-wrapper">
+      <h2 class="auto-style3">Students List by Year</h2>
+      <div class="students-container">
+        <div class="student-year"><a href="pdf/2014.pdf" target="_blank">2014</a></div>
+        <div class="student-year"><a href="pdf/2015.pdf" target="_blank">2015</a></div>
+        <div class="student-year"><a href="pdf/2016.pdf" target="_blank">2016</a></div>
+        <div class="student-year"><a href="pdf/2017.pdf" target="_blank">2017</a></div>
+        <div class="student-year"><a href="pdf/2018.pdf" target="_blank">2018</a></div>
+        <div class="student-year"><a href="pdf/2019.pdf" target="_blank">2019</a></div>
+        <div class="student-year"><a href="pdf/2020.pdf" target="_blank">2020</a></div>
+        <div class="student-year"><a href="pdf/2021.pdf" target="_blank">2021</a></div>
+        <div class="student-year"><a href="pdf/2022.pdf" target="_blank">2022</a></div>
+        <div class="student-year"><a href="pdf/2023.pdf" target="_blank">2023</a></div>
+        <div class="student-year"><a href="pdf/2024.pdf" target="_blank">2024</a></div>
+        <div class="student-year"><a href="pdf/2025.pdf" target="_blank">2025</a></div>
+      </div>
+      <div class="auto-style2">Total Students 1500 and Counting</div>
+    </div>
+  </main>
+  
+	<footer>&copy; 2025 Chamao Kidz</footer>
+</body>
+</html>

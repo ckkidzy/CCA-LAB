@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .contact-details {
+            flex: 1;
+        }
+
+        .contact-map {
+            flex: 1;
+        }
+
+        iframe {
+            width: 100%; /* Changed to 100% for better responsiveness */
+            height: 300px;
+            border: 0;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            height: 85px;
+        }
+
+        .title-buttons-container {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .auto-style1 {
+            font-family: "Comic Sans MS";
+        }
+
+        .contact-details i { /* Styles for the icons */
+            margin-right: 5px;
+            /* font-size: 1.2em;  Adjust as needed */
+            /* color: #007bff;  Adjust as needed */
+        }
+    .auto-style2 {
+	text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" aria-label="Home">
+            <img src="images/logo.png" alt="CCA Lab Logo" class="logo">
+        </a>
+        <div class="title-buttons-container">
+            <h1 class="auto-style1">Course in Computer Application (CCA LAB)</h1>
+            <div class="button-container">
+                <a href="index.html">Home</a>
+                <a href="course materials.html">Course Materials</a>
+                <a href="students data.html">Students Data</a>
+                <a href="results.html">Results</a>
+                <a href="photo gallery.html">Photo Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <div class="social-media">
+            <a href="https://www.facebook.com/chamaokadena" target="_blank" aria-label="Facebook">
+                <img src="images/facebook-icon.png" alt="Facebook" class="social-icon"> </a>
+            <a href="https://www.instagram.com/kidzy_chamz/" target="_blank" aria-label="Instagram">
+                <img src="images/instagram-icon.png" alt="Instagram" class="social-icon"> </a>
+            <a href="https://www.youtube.com/@kidzychamz-3187" target="_blank" aria-label="YouTube">
+                <img src="images/youtube-icon.png" alt="YouTube" class="social-icon"> </a>
+            <a href="mailto:kidzyck@gmail.com" aria-label="Gmail">
+                <img src="images/gmail-icon.png" alt="Gmail" class="social-icon"> </a>
+        </div>
+    </header>
+    <main>
+        <div class="contact-container">
+            <div class="contact-details">
+                <h2 class="auto-style2">Contact Us</h2>
+                <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 9615285738 | +91 8638229523</p>
+                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> kidzyck@gmail.com</p>
+                <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> +91 9615285738</p>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Don Bosco Socio Technical Institute, Baruah Chuburi, Tezpur, Assam-784 501</p>
+            </div>
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3393.7312018244793!2d92.76550497511303!3d26.664265270723895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744c387667b73d5%3A0xc06ba5d481102b3f!2sDon%20Bosco%20Socio-%20Technical%20Institute!5e1!3m2!1sen!2sin!4v1738045653093!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </main>
+    <footer>© 2025 Chamao Kidz</footer>
+</body>
+</html>

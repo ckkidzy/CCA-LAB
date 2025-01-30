@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style type="text/css">
+        /* ... (other styles) ... */
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee {
+            display: inline-block;
+            animation: marquee 3s linear infinite alternate; /* Adjust duration as needed */
+        }
+
+        .marquee h2 {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(80%);
+            }
+            100% {
+                transform: translateX(-80%);
+            }
+        }
+        .container {
+    text-align: center;
+    margin: 20px 0; /* Original margin (top and bottom) */
+    padding: 20px;
+    margin-bottom: 40px; /* Add bottom margin for spacing */
+}
+
+.container:last-of-type { /* Remove margin-bottom from the very last container */
+    margin-bottom: 20px; /* Restore normal margin */
+}
+
+        /* Button Styling - RESTORED */
+        .link-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+        }
+
+        .link-button:hover {
+            background-color: #E73927;
+           	transform: scale(1.1);
+            box-shadow:
+                0 0 20px #f00, /* Red glow */
+                0 0 45px #ff0, /* Yellow glow */
+                0 0 60px #ff0; /* Brighter yellow glow */
+        }
+
+        /* ... (other styles) ... */
+
+    .auto-style1 {
+		font-family: "Comic Sans MS";
+	}
+	.auto-style3 {
+		font-family: "Comic Sans MS";
+		color: #FF3403;
+	}
+	.auto-style4 {
+		font-family: "Comic Sans MS";
+		color: #D0001B;
+	}
+	.auto-style5 {
+		color: #000000;
+		font-family: "Lucida Calligraphy";
+		font-size: large;
+	}
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" aria-label="Home">
+            <img src="images/logo.png" alt="CCA Lab Logo" class="logo">
+        </a>
+        <div class="title-buttons-container">
+            <h1 class="auto-style1">Course in Computer Application (CCA LAB)</h1>
+            <div class="button-container">
+                <a href="index.html">Home</a>
+                <a href="course materials.html">Course Materials</a>
+                <a href="students data.html">Students Data</a>
+                <a href="results.html">Results</a>
+                <a href="photo gallery.html">Photo Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <div class="social-media">
+            <a href="https://www.facebook.com/chamaokadena" target="_blank" aria-label="Facebook">
+                <img src="images/facebook-icon.png" alt="Facebook" class="social-icon"> </a>
+            <a href="https://www.instagram.com/kidzy_chamz/" target="_blank" aria-label="Instagram">
+                <img src="images/instagram-icon.png" alt="Instagram" class="social-icon"> </a>
+            <a href="https://www.youtube.com/@kidzychamz-3187" target="_blank" aria-label="YouTube">
+                <img src="images/youtube-icon.png" alt="YouTube" class="social-icon"> </a>
+            <a href="mailto:kidzyck@gmail.com" aria-label="Gmail">
+                <img src="images/gmail-icon.png" alt="Gmail" class="social-icon"> </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-container">
+            <div class="container">
+	            <div class="marquee-container">
+	                 <div class="marquee">
+              			<h2 class="auto-style4">Exams</h2>
+              		</div>
+              	</div>
+                <p><center class="auto-style5"> <strong>Select the appropriate Exam link below: </strong> </center></p>
+                <a href="#" target="_blank" class="link-button">Mock Test</a>
+                <a href="#" target="_blank" class="link-button">Weekly Test</a>
+                <a href="#" target="_blank" class="link-button">Final Exam</a>
+                <a href="#" target="_blank" class="link-button">Other Test</a>
+            </div>
+
+            <div class="container">
+                <div class="marquee-container">
+                    <div class="marquee">
+                        <h2 class="auto-style3">Check Your Results</h2>
+                    </div>
+                </div>
+                <p><center class="auto-style5"> <strong>Select the appropriate Result link below: </strong> </center></p>
+                <a href="#" target="_blank" class="link-button">DCA Result</a>
+                <a href="#" target="_blank" class="link-button">3 Months CCA Result</a>
+                <a href="#" target="_blank" class="link-button">1 Month HP Result</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>© 2025 Chamao Kidz</footer>
+</body>
+</html>
