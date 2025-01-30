@@ -1,4 +1,4 @@
-﻿/* General Styles */
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -25,17 +25,18 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 15px 5%;
     background-color: rgba(0, 0, 0, 0.5);
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
+    flex-wrap: wrap;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 header .logo {
     height: 85px;
-    margin-right: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: inline-block;
 }
@@ -62,10 +63,10 @@ header h1 {
 }
 
 .button-container {
-    margin-top: 10px;
     display: flex;
     justify-content: center;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .button-container a {
@@ -88,12 +89,18 @@ header h1 {
 }
 
 /* Social Media Icons */
+.social-media {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .social-media .social-icon {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: inline-block;
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .social-media a:nth-child(1) .social-icon:hover {
@@ -116,17 +123,6 @@ header h1 {
     box-shadow: 0 0 20px #66ff66;
 }
 
-/* Optional: Style the container if needed */
-.social-media {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.social-media a {
-    text-decoration: none;
-}
-
 /* Main Section */
 main {
     flex: 1;
@@ -135,38 +131,66 @@ main {
     justify-content: center;
     padding: 20px;
     text-align: center;
+    flex-wrap: wrap;
 }
 
 main p {
-    max-width: 600px;
-    font-size: 1.2rem;
+    max-width: 90%;
+    font-size: 1rem;
     line-height: 1.6;
 }
 
 /* Contact Page Map Styles */
 .contact-map iframe {
     width: 100%;
-    height: 300px;
-    border: 0;
-}
-
-.contact-map {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 250px;
 }
 
 /* Footer Section */
 footer {
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 5%;
     background-color: rgba(0, 0, 0, 0.5);
     font-size: 0.9rem;
 }
 
-/* Prevent Horizontal Scroll from Iframe */
-iframe {
-    max-width: 100%;
-    display: block;
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 5%;
+    }
+
+    .title-buttons-container {
+        margin-top: 10px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo {
+        height: 50px;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    .button-container a {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    main p {
+        font-size: 0.9rem;
+    }
 }
