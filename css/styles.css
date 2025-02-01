@@ -1,4 +1,4 @@
-﻿/* General Styles */
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -59,6 +59,21 @@ header .logo:hover {
 header h1 {
     margin: 0;
     font-size: 2rem;
+}
+
+/* home page msoffice logos */
+.office-applications {
+    display: flex; /* Makes the images align horizontally */
+    justify-content: space-evenly; /* Space out the images evenly */
+    gap: 10px; /* Optional: Adds spacing between the images */
+    margin-top: 20px; /*adds space above the images */
+    flex-wrap: wrap; /* Allows images to wrap on smaller screens */
+}
+
+.office-applications img {
+    width: 100px; /* Set the width of each image */
+    height: 100px; /* Set the height of each image */
+    object-fit: cover; /* Ensures the images maintain aspect ratio */
 }
 
 /* Navigation Menu */
@@ -179,6 +194,7 @@ main {
     padding: 20px;
     text-align: center;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 
 main p {
