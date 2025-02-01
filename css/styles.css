@@ -1,4 +1,4 @@
-/* General Styles */
+﻿/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -185,6 +185,17 @@ main p {
     max-width: 90%;
     font-size: 1rem;
     line-height: 1.6;
+}
+/* student data shading */
+.auto-style1 {
+    background-color: black; /* Change color as needed */
+    color: yellow; /* Adjust text color if necessary */
+    display: block;
+    width: 100vw; /* Full width of the viewport */
+    text-align: center;
+    padding: 10px 0; /* Adjust top & bottom spacing */
+    margin: 20px; /* Remove extra margins */
+	font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 /* Contact Page Map Styles */

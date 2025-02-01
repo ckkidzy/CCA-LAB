@@ -1,4 +1,4 @@
-// Select all buttons
+﻿// Select all buttons
 const buttons = document.querySelectorAll('.button-container button');
 
 // Add event listeners to each button
