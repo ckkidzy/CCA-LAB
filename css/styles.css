@@ -90,9 +90,13 @@ header h1 {
 }
 
 .navbar a:hover {
-    background-color: white;
+    background-color: yellow;
     color: #4CAF50;
     border-radius: 5px;
+	box-shadow:
+        0 0 20px #f00, /* Red glow */
+        0 0 45px #ff0, /* Yellow glow */
+        0 0 60px #ff0; /* Brighter yellow glow */
 }
 
 /* Mobile Menu */
