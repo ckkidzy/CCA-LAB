@@ -226,6 +226,9 @@ ul {
 ul li {
   text-align: left; /* Ensures text is left-aligned */
 }
+section {
+  margin-bottom: 20px; /* Adds space below each section */
+}
 
 /* Contact Page Map Styles */
 .contact-map iframe {
