@@ -217,6 +217,15 @@ main p {
     margin: 20px; /* Remove extra margins */
 	font-family: 'Comic Sans MS', cursive, sans-serif;
 }
+/* bullet list in course materials */
+ul {
+  list-style-position: inside; /* Ensures bullets are closer to the text */
+  padding-left: 20px; /* Adjusts left padding for the list */
+}
+
+ul li {
+  text-align: left; /* Ensures text is left-aligned */
+}
 
 /* Contact Page Map Styles */
 .contact-map iframe {
