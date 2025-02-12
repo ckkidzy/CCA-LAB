@@ -229,6 +229,9 @@ ul li {
 section {
   margin-bottom: 30px; /* Adds space below each section */
 }
+section a {
+  margin-right: 20px; /* Adds space between links */
+}
 section h2 {
   color: red; /* Changes the color of all h2 tags inside section to red */
 	font-family: cursive; /* headings font */
