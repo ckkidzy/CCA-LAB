@@ -229,6 +229,10 @@ ul li {
 section {
   margin-bottom: 30px; /* Adds space below each section */
 }
+section h2 {
+  color: red; /* Changes the color of all h2 tags inside section to red */
+}
+
 section h3 {
   margin-top: 20px; /* Adds space above each h3 within the section */
   margin-bottom: 10px; /* Adds space below each h3 within the section */
