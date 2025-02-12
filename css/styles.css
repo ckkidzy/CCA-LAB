@@ -91,7 +91,7 @@ header h1 {
 
 .navbar a:hover {
     background-color: yellow;
-    color: #4CAF50;
+    color: #0c1beb;
     border-radius: 5px;
 	box-shadow:
         0 0 20px #f00, /* Red glow */
