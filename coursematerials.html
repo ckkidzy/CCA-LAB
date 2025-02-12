@@ -11,13 +11,10 @@
     <a href="index.html" aria-label="Home">
         <img src="images/logo.png" alt="CCA Lab Logo" class="logo">
     </a>
-
     <div class="title-buttons-container">
         <h1>Course in Computer Application (CCA LAB)</h1>
     </div>
-
     <button class="menu-toggle" aria-label="Toggle menu">&#9776; Menu</button>
-
     <nav class="button-container navbar">
         <a href="index.html">Home</a>
         <a href="coursematerials.html">Course Materials</a>
@@ -26,7 +23,6 @@
         <a href="photogallery.html">Photo Gallery</a>
         <a href="contact.html">Contact</a>
     </nav>
-
     <div class="social-media">
       <a href="https://www.facebook.com/chamaokadena" target="_blank" aria-label="Facebook">
         <img src="images/facebook-icon.png" alt="Facebook" class="social-icon">
@@ -44,91 +40,79 @@
   </header>
 
   <main>
-    <section id="course-overview">
-      <h2>Course Overview</h2>
-      <p>Welcome to the Course Material section for the Certificate Course in Computer Application. Here you will find essential learning resources.</p>
+    <section>
+      <h2>1. Course Overview</h2>
+      <p>Welcome to the Course Material section for the Certificate Course in Computer Application. This page provides all the essential resources you need to succeed in your studies.</p>
       <ul>
-        <li>Module 1: Introduction to Computers</li>
-        <li>Module 2: Operating Systems</li>
-        <li>Module 3: MS Office Suite</li>
-        <li>Module 4: Basics of Programming (C/Python)</li>
-        <li>Module 5: Internet & Networking Basics</li>
-        <li>Module 6: Final Project</li>
+        <li><strong>Course Objectives:</strong> Gain a strong foundation in computer applications, including programming, office tools, and basic networking.</li>
+        <li><strong>Syllabus Outline:</strong>
+          <ul>
+            <li>Module 1: Introduction to Computers</li>
+            <li>Module 2: Operating Systems</li>
+            <li>Module 3: MS Office Suite</li>
+            <li>Module 4: Basics of Programming (C/Python)</li>
+            <li>Module 5: Internet & Networking Basics</li>
+            <li>Module 6: Final Project</li>
+          </ul>
+        </li>
       </ul>
     </section>
 
-    <section id="module-wise-content">
-      <h2>Module-Wise Content</h2>
-      <div class="module">
-        <h3>Module 1: Introduction to Computers</h3>
-        <a href="#">Download PDF Notes</a> | <a href="#">Watch Video Lectures</a> | <a href="#">View Slides</a>
-      </div>
-      <div class="module">
-        <h3>Module 2: Operating Systems</h3>
-        <a href="#">Download PDF Notes</a> | <a href="#">Watch Video Lectures</a> | <a href="#">View Slides</a>
-      </div>
-      <!-- Repeat similar blocks for other modules -->
+    <section>
+      <h2>2. Module-Wise Content</h2>
+      <h3>Module 1: Introduction to Computers</h3>
+      <a href="#" class="button">Download PDF Notes</a>
+      <a href="#" class="button">Watch Video Lectures</a>
+      <a href="#" class="button">View Slides</a>
+
+      <h3>Module 2: Operating Systems</h3>
+      <a href="#" class="button">Download PDF Notes</a>
+      <a href="#" class="button">Watch Video Lectures</a>
+      <a href="#" class="button">View Slides</a>
+
+      <h3>Module 3: MS Office Suite</h3>
+      <a href="#" class="button">Download PDF Notes</a>
+      <a href="#" class="button">Watch Video Lectures</a>
+      <a href="#" class="button">View Slides</a>
+
+      <h3>Module 4: Basics of Programming (C/Python)</h3>
+      <a href="#" class="button">Download PDF Notes</a>
+      <a href="#" class="button">Watch Video Lectures</a>
+      <a href="#" class="button">View Slides</a>
+
+      <h3>Module 5: Internet & Networking Basics</h3>
+      <a href="#" class="button">Download PDF Notes</a>
+      <a href="#" class="button">Watch Video Lectures</a>
+      <a href="#" class="button">View Slides</a>
+
+      <h3>Module 6: Final Project</h3>
+      <a href="#" class="button">Download Project Guidelines</a>
+      <a href="#" class="button">View Sample Projects</a>
     </section>
 
-    <section id="resources">
-      <h2>Downloadable Resources</h2>
-      <ul>
-        <li><a href="#">Assignments</a></li>
-        <li><a href="#">Sample Projects</a></li>
-        <li><a href="#">E-books</a></li>
-      </ul>
+    <section>
+      <h2>3. Downloadable Resources</h2>
+      <a href="#" class="button">Download Assignments</a>
+      <a href="#" class="button">Download Sample Projects</a>
+      <a href="#" class="button">Access E-books</a>
     </section>
 
-    <section id="interactive-elements">
-      <h2>Interactive Elements</h2>
-      <a href="#">Take a Quiz</a> | <a href="#">Start Practice Test</a>
+    <section>
+      <h2>4. Interactive Elements</h2>
+      <a href="#" class="button">Take a Quiz</a>
+      <a href="#" class="button">Start Practice Test</a>
     </section>
 
-    <section id="additional-materials">
-      <h2>Additional Learning Materials</h2>
-      <a href="#">FAQs</a> | <a href="#">Glossary of Terms</a>
+    <section>
+      <h2>5. Additional Learning Materials</h2>
+      <a href="#" class="button">Read FAQs</a>
+      <a href="#" class="button">View Glossary</a>
     </section>
 
-    <section id="updates">
-      <h2>Updates & Announcements</h2>
-      <p>Stay updated with the latest announcements, deadlines, and new materials.</p>
-    </section>
-  </main>
+    </main>
 
   <footer>&copy; 2025 Chamao Kidz</footer>
 
   <script src="java/script.js"></script>
-  <script>
-    (function(){
-      if(!window.chatbase || window.chatbase("getState") !== "initialized") {
-          window.chatbase = (...arguments) => {
-              if (!window.chatbase.q) {
-                  window.chatbase.q = [];
-              }
-              window.chatbase.q.push(arguments);
-          };
-          window.chatbase = new Proxy(window.chatbase, {
-              get(target, prop) {
-                  if (prop === "q") {
-                      return target.q;
-                  }
-                  return (...args) => target(prop, ...args);
-              }
-          });
-      }
-      const onLoad = function() {
-          const script = document.createElement("script");
-          script.src = "https://www.chatbase.co/embed.min.js";
-          script.id = "ooWq2qhrl8-VCdStGCFi7";
-          script.domain = "www.chatbase.co";
-          document.body.appendChild(script);
-      };
-      if (document.readyState === "complete") {
-          onLoad();
-      } else {
-          window.addEventListener("load", onLoad);
-      }
-    })();
-  </script>
 </body>
 </html>
