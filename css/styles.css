@@ -233,10 +233,12 @@ section h2 {
   color: red; /* Changes the color of all h2 tags inside section to red */
 	font-family: cursive; /* headings font */
 }
-
 section h3 {
   margin-top: 20px; /* Adds space above each h3 within the section */
   margin-bottom: 10px; /* Adds space below each h3 within the section */
+}
+section h2 + h3 + a:hover {
+  text-decoration: none; /* Ensures no underline on hover */
 }
 
 /* Contact Page Map Styles */
