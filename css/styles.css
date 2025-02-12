@@ -171,22 +171,22 @@ header h1 {
 
 .social-media a:nth-child(1) .social-icon:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px blue;
+    box-shadow: 0 0 40px blue;
 }
 
 .social-media a:nth-child(2) .social-icon:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px yellow;
+    box-shadow: 0 0 40px yellow;
 }
 
 .social-media a:nth-child(3) .social-icon:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px pink;
+    box-shadow: 0 0 40px pink;
 }
 
 .social-media a:nth-child(4) .social-icon:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px #66ff66;
+    box-shadow: 0 0 40px #66ff66;
 }
 
 /* Main Section */
