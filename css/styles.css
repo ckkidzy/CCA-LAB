@@ -94,7 +94,7 @@ header h1 {
     color: #0c1beb;
     border-radius: 5px;
 	box-shadow:
-        0 0 20px #f00, /* Red glow */
+        0 0 20px #95ff00, /* green light glow */
         0 0 45px #ff0, /* Yellow glow */
         0 0 60px #ff0; /* Brighter yellow glow */
 }
