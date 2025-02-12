@@ -237,9 +237,14 @@ section h3 {
   margin-top: 20px; /* Adds space above each h3 within the section */
   margin-bottom: 10px; /* Adds space below each h3 within the section */
 }
-section h2 + h3 + a:hover {
+section h2:nth-of-type(1) a {
+  text-decoration: none; /* Removes underline from links */
+}
+
+section h2:nth-of-type(1) a:hover {
   text-decoration: none; /* Ensures no underline on hover */
 }
+
 
 /* Contact Page Map Styles */
 .contact-map iframe {
