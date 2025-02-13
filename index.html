@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,26 +49,116 @@
         </div>
     </header>
 
-    <main>
-    <h2>Certificate Course in Computer Application</h2>
-       <!-- Images of Microsoft Office applications -->
-    <div class="office-applications">
-        <img src="images/wordlogo.png" alt="Word" />
-        <img src="images/internetlogo.png" alt="Internet" />
-        <img src="images/excellogo.png" alt="Excel" />
-        <img src="images/computerlogo.png" alt="comlog" />
-        <img src="images/powerpointlogo.png" alt="PowerPoint" />
-        <img src="images/comal.png" alt="comall" />
+   <main class="main-container">
+    <!-- Left Content (70% Width) -->
+    <div class="left-content">
+        <h2>Certificate Course in Computer Application</h2>
+        <div class="office-applications">
+            <img src="images/wordlogo.png" alt="Word" />
+            <img src="images/internetlogo.png" alt="Internet" />
+            <img src="images/excellogo.png" alt="Excel" />
+            <img src="images/computerlogo.png" alt="Computer" />
+            <img src="images/powerpointlogo.png" alt="PowerPoint" />
+            <img src="images/comal.png" alt="All" />
+        </div>
+        <p>
+            A Computer Applications (CCA) course provides essential skills in using Microsoft Office tools like 
+            Word, Excel, and PowerPoint, which are vital for creating documents, managing data, and delivering presentations. 
+            <br> The course also covers internet usage, including web browsing, online research, and email communication, while emphasizing online safety and cybersecurity.
+            Additionally, it introduces cloud-based tools and collaboration platforms, preparing students for modern work environments.
+        </p>
     </div>
-     <p style="text-align: justify;">
-        A Computer Applications (CCA) course provides essential skills in using Microsoft Office tools like 
-        Word, Excel, and PowerPoint, which are vital for creating documents, managing data, and delivering presentations. 
-        Students learn to format text, use formulas, and design slideshows effectively. 
-        <br> The course also covers internet usage, including web browsing, online research, and email communication, while emphasizing online safety and cyber security. 
-        Additionally, it introduces cloud-based tools and collaboration platforms, preparing students for modern work environments. 
-        <br> Overall, CCA equips learners with practical computer skills, enhancing productivity and readiness for academic, professional, and everyday tasks in a digital world.       
-    </p>
+
+    <!-- Right Ticker (30% Width) -->
+    <div class="right-ticker">
+        <div class="ticker-wrapper">
+            <ul class="ticker-content">
+                <li>📢 Announcement: New batch starts soon! <img src="images/newgood.gif" width="35" height="20" alt="Newgood"></li>
+                <li>📢 Announcement: Admission going on</li>
+                <li>🏆 Exam results declared on February 3rd <img src="images/newgood.gif" width="35" height="20" alt="Newgood"></li>
+                <li>💻 Upcoming Webinar on Office with AI</li>
+                <li>📅 Admissions open for Holiday Package <img src="images/newgood.gif" width="35" height="20" alt="Newgood"></li>
+            </ul>
+        </div>
+    </div>
 </main>
+
+<style>
+    /* Flex container for left and right sections */
+.main-container {
+    display: flex;
+    gap: 20px;
+    margin: 20px;
+}
+
+.left-content {
+    width: 70%;
+}
+
+.office-applications img {
+    max-width: 100px;
+    margin: 10px;
+}
+
+/* Right Ticker (30%) */
+.right-ticker {
+    width: 30%;
+    background: #007BFF;
+    color: white;
+    padding: 10px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+/* Ticker Wrapper */
+.ticker-wrapper {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Ticker Content */
+.ticker-content {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    animation: ticker-scroll 10s linear infinite;
+}
+
+/* Animation for vertical scrolling */
+@keyframes ticker-scroll {
+    0% { transform: translateY(75%); }   /* Start from the bottom */
+    100% { transform: translateY(-100%); } /* End at the top */
+}
+
+/* Ticker content list style */
+.ticker-content li {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Pause the ticker animation when hovered */
+.right-ticker:hover .ticker-content {
+    animation-play-state: paused;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+    .left-content, .right-ticker {
+        width: 100%;
+    }
+}
+
+</style>
+
     <footer>
         © 2025 Chamao Kidz
     </footer>
