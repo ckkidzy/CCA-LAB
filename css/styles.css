@@ -243,6 +243,73 @@ section h3 {
 section h2:nth-of-type(1) ~ a:hover {
   text-decoration: none; /* Ensures no underline on hover */
 }
+/* Grid Layout */
+/* Grid Layout: 4 Columns, 2 Rows */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 Columns */
+    grid-template-rows: repeat(2, auto);  /* 2 Rows */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Box Styling */
+.content-box {
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive: Adjust for Smaller Screens */
+@media (max-width: 1024px) {
+    .content-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 Columns */
+        grid-template-rows: repeat(4, auto);  /* 4 Rows */
+    }
+}
+
+@media (max-width: 600px) {
+    .content-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 Column */
+    }
+}
+
+/* Different Background Colors for Each Box */
+.box1 { background-color: #003399; } /* Blue */
+.box2 { background-color: #e74c3c; } /* Red */
+.box3 { background-color: #2ecc71; } /* Green */
+.box4 { background-color: #f39c12; } /* Orange */
+.box5 { background-color: #9b59b6; } /* Purple */
+.box6 { background-color: #34495e; } /* Dark Gray */
+.box7 { background-color: #fc007f; } /* Pink */
+.box8 { background-color: #00cc00; } /* light green */
+.box9 { background-color: #808000; } /* Olive */
+.box10 { background-color: #ffa500; } /* Orange */
+.box11 { background-color: #9900cc; } /* pinky*/
+
+
+/* Button Styling */
+.button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 15px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: lightgray;
+}
+
 
 /* Contact Page Map Styles */
 .contact-map iframe {
