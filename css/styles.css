@@ -256,13 +256,19 @@ section h2:nth-of-type(1) ~ a:hover {
 
 /* Box Styling */
 .content-box {
-    padding: 20px;
+    padding: 5px;
     border-radius: 10px;
     color: white;
     text-align: center;
     font-weight: bold;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+.content-box h3 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
 
 /* Responsive: Adjust for Smaller Screens */
 @media (max-width: 1024px) {
@@ -291,7 +297,6 @@ section h2:nth-of-type(1) ~ a:hover {
 .box10 { background-color: #ffa500; } /* Orange */
 .box11 { background-color: #9900cc; } /* pinky*/
 
-
 /* Button Styling */
 .button {
     display: block;
@@ -307,9 +312,15 @@ section h2:nth-of-type(1) ~ a:hover {
 }
 
 .button:hover {
-    background-color: lightgray;
+    background-color: cyan;
 }
-
+/* Logo inside the box */
+.excel-logo {
+  display: block;
+  margin: 0 auto;  /* Centers the logo */
+  width: 50px;     /* Adjust the size as needed */
+  height: auto;    /* Maintain aspect ratio */
+}
 
 /* Contact Page Map Styles */
 .contact-map iframe {
