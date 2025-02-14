@@ -312,7 +312,8 @@ section h2:nth-of-type(1) ~ a:hover {
 }
 
 .button:hover {
-    background-color: cyan;
+	background-color: cyan;
+	color: red;
 }
 /* Logo inside the box */
 .excel-logo {
