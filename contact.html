@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -58,6 +58,31 @@
     .auto-style2 {
 	text-decoration: underline;
 }
+<!-- Prospectus area -->
+h3 {
+        color: green !important; /* Force green color */
+        margin-top: 20px !important; /* Add space */
+    }
+	.download-btn {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 10px 30px; /* Increase button size */
+    font-size: 18px; /* Larger text */
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease, color 0.3s ease;
+}
+
+.download-btn:hover { 
+    background-color: #f5e90f;
+    color: blue; /* Change text color to blue */
+    box-shadow: 0 0 40px yellow, 0 0 15px red, 0 0 45px white; /* Multi-color glow effect */
+    transform: scale(1.1); /* Slightly increase size on hover */
+}
+
     </style>
 </head>
 <body>
@@ -95,21 +120,29 @@
                 <img src="images/gmail-icon.png" alt="Gmail" class="social-icon"> </a>
         </div>
     </header>
-    <main>
-        <div class="contact-container">
-            <div class="contact-details">
-                <h2 class="auto-style2">Contact Us</h2>
-                <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 9615285738 | +91 8638229523</p>
-                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> kidzyck@gmail.com</p>
-                <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> +91 9615285738</p>
-                <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Don Bosco Socio Technical Institute, Baruah Chuburi, Tezpur, Assam-784 501</p>
-            </div>
-            <div class="contact-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3393.7312018244793!2d92.76550497511303!3d26.664265270723895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744c387667b73d5%3A0xc06ba5d481102b3f!2sDon%20Bosco%20Socio-%20Technical%20Institute!5e1!3m2!1sen!2sin!4v1738045653093!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
+    <main> 
+    <div class="contact-container">
+        <div class="contact-details">
+            <h2 class="auto-style2">Contact Us</h2>
+            <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 9615285738 | +91 8638229523</p>
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> kidzyck@gmail.com</p>
+            <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> +91 9615285738</p>
+            <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Don Bosco Socio Technical Institute, Baruah Chuburi, Tezpur, Assam-784 501</p>
+
+            <!-- Spacing added using CSS -->
+	<h3 style="color: brown; margin-top: 20px; text-decoration: underline;">Prospectus</h3>
+<img src="images/arrow3.gif" width="50" height="30" alt="Newgood"> <br>
+            <!-- Download Button -->
+            <a href="images/prospectus.jpg" class="download-btn" target="_blank" download>DOWNLOAD</a>
         </div>
-    </main>
+        <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3393.7312018244793!2d92.76550497511303!3d26.664265270723895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744c387667b73d5%3A0xc06ba5d481102b3f!2sDon%20Bosco%20Socio-%20Technical%20Institute!5e1!3m2!1sen!2sin!4v1738045653093!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</main>
+
+
     <footer>© 2025 Chamao Kidz</footer>
     <script src="java/script.js"></script>
 <!-- Starting of Chatbot Script -->
