@@ -117,9 +117,9 @@
     <section>
       <h2>3. Downloadable Resources</h2>
 	<div class="content-box box9">
-      <a href="https://i.giphy.com/3o7btQ0NH6Kl8CxCfK.webp" target="_blank" class="button">Download Assignments</a>
-      <a href="https://i.giphy.com/3o7btQ0NH6Kl8CxCfK.webp" target="_blank" class="button">Download Sample Projects</a>
-      <a href="https://i.giphy.com/3o7btQ0NH6Kl8CxCfK.webp" target="_blank" class="button">Access E-books</a>
+      <a href="load.html" target="_blank" class="button">Download Assignments</a>
+      <a href="load.html" target="_blank" class="button">Download Sample Projects</a>
+      <a href="load.html" target="_blank" class="button">Access E-books</a>
 	</div>
     </section>
 
@@ -127,14 +127,14 @@
       <h2>4. Interactive Elements</h2>
 	<div class="content-box box10">
       <a href="https://shorturl.at/FVmGB" target="_blank" class="button">Take a Quiz</a>
-      <a href="https://i.giphy.com/3o7btQ0NH6Kl8CxCfK.webp" target="_blank" class="button">Start Practice Test</a>
+      <a href="load.html" target="_blank" class="button">Start Practice Test</a>
     </section>
 
     <section>
       <h2>5. Additional Learning Materials</h2>
 	<div class="content-box box11">
-      <a href="https://i.giphy.com/3o7btQ0NH6Kl8CxCfK.webp" target="_blank" class="button">Read FAQs</a>
-      <a href="https://i.giphy.com/3o7btQ0NH6Kl8CxCfK.webp" target="_blank" class="button">View Glossary</a>
+      <a href="load.html" target="_blank" class="button">Read FAQs</a>
+      <a href="load.html" target="_blank" class="button">View Glossary</a>
     </section>
 
     </main>
@@ -142,39 +142,5 @@
   <footer>&copy; 2025 Chamao Kidz</footer>
 
   <script src="java/script.js"></script>
-<!-- Starting of Chatbot Script -->
-    <script>
-        (function(){
-            if(!window.chatbase || window.chatbase("getState") !== "initialized") {
-                window.chatbase = (...arguments) => {
-                    if (!window.chatbase.q) {
-                        window.chatbase.q = [];
-                    }
-                    window.chatbase.q.push(arguments);
-                };
-                window.chatbase = new Proxy(window.chatbase, {
-                    get(target, prop) {
-                        if (prop === "q") {
-                            return target.q;
-                        }
-                        return (...args) => target(prop, ...args);
-                    }
-                });
-            }
-            const onLoad = function() {
-                const script = document.createElement("script");
-                script.src = "https://www.chatbase.co/embed.min.js";
-                script.id = "ooWq2qhrl8-VCdStGCFi7";
-                script.domain = "www.chatbase.co";
-                document.body.appendChild(script);
-            };
-            if (document.readyState === "complete") {
-                onLoad();
-            } else {
-                window.addEventListener("load", onLoad);
-            }
-        })();
-    </script>
-    <!-- End Chatbot Script -->	
 </body>
 </html>
