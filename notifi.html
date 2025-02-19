@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCA LAB</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style type="text/css">
+        </style>
+</head>
+<body>
+    <header>
+    <a href="index.html" aria-label="Home">
+        <img src="images/logo.png" alt="CCA Lab Logo" class="logo">
+    </a>
+
+    <div class="title-buttons-container">
+        <h1>Course in Computer Application (CCA LAB)</h1>
+    </div>
+
+    <!-- Menu Button (Now on the Right Side) -->
+    <button class="menu-toggle" aria-label="Toggle menu">
+        ☰ Menu
+    </button>
+
+    <!-- Navigation Menu -->
+    <nav class="button-container navbar">
+        <a href="index.html">Home</a>
+        <a href="coursematerials.html">Course Materials</a>
+        <a href="studentsdata.html">Students Data</a>
+        <a href="results.html">Results</a>
+        <a href="photogallery.html">Photo Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+          
+    <div class="social-media">
+            <a href="https://www.facebook.com/chamaokadena" target="_blank" aria-label="Facebook">
+                <img src="images/facebook-icon.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/kidzy_chamz/" target="_blank" aria-label="Instagram">
+                <img src="images/instagram-icon.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/@kidzychamz-3187" target="_blank" aria-label="YouTube">
+                <img src="images/youtube-icon.png" alt="YouTube" class="social-icon">
+            </a>
+            <a href="mailto:kidzyck@gmail.com" aria-label="Gmail">
+                <img src="images/gmail-icon.png" alt="Gmail" class="social-icon">
+            </a>
+        </div>
+    </header>
+
+  <main>
+    <h1>No Active Exams</h1>
+    <button onclick="window.location.href='results.html'" class="blink-button">
+        Go Back
+    </button>
+</main>
+
+<style>
+    .blink-button {
+        display: block;
+        margin: 20px auto;
+        padding: 15px 50px;
+        font-size: 18px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 30px; /* Rounded corners */
+        cursor: pointer;
+        animation: blink 0.5s infinite alternate;
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    @keyframes blink {
+        0% { background-color: #007bff; color: white; }
+        100% { background-color: #ff0000; color: yellow; }
+    }
+
+    /* Red glow effect on hover */
+    .blink-button:hover {
+        box-shadow: 0 0 60px yellow;
+    }
+</style>
+
+    <footer>
+        © 2025 Chamao Kidz
+    </footer>
+<script src="java/script.js"></script>
+<!-- Starting of Chatbot Script -->
+    <script>
+        (function(){
+            if(!window.chatbase || window.chatbase("getState") !== "initialized") {
+                window.chatbase = (...arguments) => {
+                    if (!window.chatbase.q) {
+                        window.chatbase.q = [];
+                    }
+                    window.chatbase.q.push(arguments);
+                };
+                window.chatbase = new Proxy(window.chatbase, {
+                    get(target, prop) {
+                        if (prop === "q") {
+                            return target.q;
+                        }
+                        return (...args) => target(prop, ...args);
+                    }
+                });
+            }
+            const onLoad = function() {
+                const script = document.createElement("script");
+                script.src = "https://www.chatbase.co/embed.min.js";
+                script.id = "ooWq2qhrl8-VCdStGCFi7";
+                script.domain = "www.chatbase.co";
+                document.body.appendChild(script);
+            };
+            if (document.readyState === "complete") {
+                onLoad();
+            } else {
+                window.addEventListener("load", onLoad);
+            }
+        })();
+    </script>
+    <!-- End Chatbot Script -->
+</body>
+</html>
