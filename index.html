@@ -166,38 +166,31 @@
     </footer>
 <script src="java/script.js"></script>
 <!-- Starting of Chatbot Script -->
-    <script>
-        (function(){
-            if(!window.chatbase || window.chatbase("getState") !== "initialized") {
-                window.chatbase = (...arguments) => {
-                    if (!window.chatbase.q) {
-                        window.chatbase.q = [];
-                    }
-                    window.chatbase.q.push(arguments);
-                };
-                window.chatbase = new Proxy(window.chatbase, {
-                    get(target, prop) {
-                        if (prop === "q") {
-                            return target.q;
-                        }
-                        return (...args) => target(prop, ...args);
-                    }
-                });
-            }
-            const onLoad = function() {
-                const script = document.createElement("script");
-                script.src = "https://www.chatbase.co/embed.min.js";
-                script.id = "ooWq2qhrl8-VCdStGCFi7";
-                script.domain = "www.chatbase.co";
-                document.body.appendChild(script);
-            };
-            if (document.readyState === "complete") {
-                onLoad();
-            } else {
-                window.addEventListener("load", onLoad);
-            }
-        })();
-    </script>
+    <script src='https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js'></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function() {
+    window.AgentInitializer.init({
+      agentRenderURL: "https://agent.jotform.com/01952c04cfac713f9534728ed36be33b6f51",
+      rootId: "JotformAgent-01952c04cfac713f9534728ed36be33b6f51",
+      formID: "01952c04cfac713f9534728ed36be33b6f51",
+      queryParams: ["skipWelcome=1", "maximizable=1"],
+      domain: "https://www.jotform.com",
+      isDraggable: false,
+      background: "linear-gradient(180deg, #B3D37B 0%, #B3D37B 100%)",
+      buttonBackgroundColor: "#3C4C1E",
+      buttonIconColor: "#FFF",
+      variant: false,
+      customizations: {
+        "greeting": "Yes",
+        "greetingMessage": "Hi! How can I assist you?",
+        "pulse": "Yes",
+        "position": "right"
+      },
+      isVoice: undefined
+    });
+  });
+</script>
+
     <!-- End Chatbot Script -->
 </body>
 </html>
