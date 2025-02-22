@@ -145,7 +145,7 @@
 
   <script src="java/script.js"></script>
 <!-- Starting of Chatbot Script -->
-    <script src='https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js'></script>
+<script src="https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js"></script>
 <script>
   window.addEventListener("DOMContentLoaded", function() {
     window.AgentInitializer.init({
@@ -159,17 +159,17 @@
       buttonBackgroundColor: "#3C4C1E",
       buttonIconColor: "#FFF",
       variant: false,
+      isInitialOpen: false,  // Ensures the chat does NOT open automatically
       customizations: {
         "greeting": "Yes",
         "greetingMessage": "Hi! How can I assist you?",
         "pulse": "Yes",
         "position": "right"
       },
-      isVoice: undefined
+      isVoice: true,
     });
   });
 </script>
-
     <!-- End Chatbot Script -->
 </body>
 </html>
