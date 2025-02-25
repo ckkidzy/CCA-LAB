@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCA LAB</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <style type="text/css">
+        .faq-container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .faq-container h2 {
+            text-align: center;
+        }
+
+        .faq {
+            margin-left: 60px;
+        }
+
+        .faq-question {
+            padding: 10px 0;
+            margin-bottom: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: black;
+            text-align: left;
+        }
+
+        .faq-answer {
+            padding: 5px 0 15px 0;
+            display: none;
+            font-size: 1em;
+            color: darkblue;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" aria-label="Home">
+            <img src="images/logo.png" alt="CCA Lab Logo" class="logo">
+        </a>
+
+        <div class="title-buttons-container">
+            <h1>Course in Computer Application (CCA LAB)</h1>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle menu">
+            ☰ Menu
+        </button>
+
+        <nav class="button-container navbar">
+            <a href="index.html">Home</a>
+            <a href="coursematerials.html">Course Materials</a>
+            <a href="studentsdata.html">Students Data</a>
+            <a href="results.html">Results</a>
+            <a href="photogallery.html">Photo Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="registration.html" target="_blank">Registration</a>
+        </nav>
+
+        <div class="social-media">
+            <a href="https://www.facebook.com/chamaokadena" target="_blank" aria-label="Facebook">
+                <img src="images/facebook-icon.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/kidzy_chamz/" target="_blank" aria-label="Instagram">
+                <img src="images/instagram-icon.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/@kidzychamz-3187" target="_blank" aria-label="YouTube">
+                <img src="images/youtube-icon.png" alt="YouTube" class="social-icon">
+            </a>
+            <a href="mailto:kidzyck@gmail.com" aria-label="Gmail">
+                <img src="images/gmail-icon.png" alt="Gmail" class="social-icon">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="faq-container">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq">
+                <div class="faq-question">Q.What are the prerequisites for this course?</div>
+                <div class="faq-answer">There are no specific prerequisites for this course. It's designed for beginners with little to no prior experience with computers.</div>
+            </div>
+
+            <div class="faq">
+                <div class="faq-question">Q.What software will I be learning?</div>
+                <div class="faq-answer">You will gain proficiency in essential software applications like Microsoft Word, Excel, PowerPoint, and Internet browsers.</div>
+            </div>
+
+            <div class="faq">
+                <div class="faq-question">Q.What is the duration of the course?</div>
+                <div class="faq-answer">The course duration depends on your choice. We provide 1month, 2months and 3months course duration.</div>
+            </div>
+
+            <div class="faq">
+                <div class="faq-question">Q.Are there any job opportunities after completing this course?</div>
+                <div class="faq-answer">Yes, after completing the course, you'll be equipped with skills suitable for various entry-level positions like Data Entry Operator, Office Assistant, and Customer Support Representative and lots more.</div>
+            </div>
+
+            <div class="faq">
+                <div class="faq-question">Q.Will I receive a certificate upon completion?</div>
+                <div class="faq-answer">Yes, you will receive a certificate of completion after successfully finishing the course.</div>
+            </div>
+
+            <div class="faq">
+                <div class="faq-question">Q.Is there any hands-on practice included in the course?</div>
+                <div class="faq-answer">Absolutely! The course includes numerous practical exercises and hands-on projects to reinforce your learning.</div>
+            </div>
+
+            <div class="faq">
+                <div class="faq-question">Q.What kind of support is provided during the course?</div>
+                <div class="faq-answer">You will have daily 3 hours of classes everday. We help you with any assistance you may need.</div>
+            </div>
+
+            <div class="faq">
+                <div class="faq-question">Q.Are the course materials available online?</div>
+                <div class="faq-answer">Yes, all course materials, including videos, documents, and exercises, are available online.</div>
+            </div>
+
+            <div class="faq">
+                <div class="faq-question">Q.Can I access the course materials after the course ends?</div>
+                <div class="faq-answer">Yes, you will have access to the course materials after the course completion too.</div>
+            </div>
+
+            <div class="faq">
+                <div class="faq-question">Q.What is the class schedule?</div>
+                <div class="faq-answer">Classes are held from Monday to Saturday. 9am-12pm Morning Batch and 1pm-4pm Afternoon Batch.</div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        © 2025 Chamao Kidz
+    </footer>
+    <script src="java/script.js"></script>
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block'? 'none': 'block';
+            });
+        });
+    </script>
+    <script src="https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            window.AgentInitializer.init({
+                agentRenderURL: "https://agent.jotform.com/01952c04cfac713f9534728ed36be33b6f51",
+                rootId: "JotformAgent-01952c04cfac713f9534728ed36be33b6f51",
+                formID: "01952c04cfac713f9534728ed36be33b6f51",
+                queryParams: ["skipWelcome=1", "maximizable=1"],
+                domain: "https://www.jotform.com",
+                isDraggable: false,
+                background: "linear-gradient(180deg, #B3D37B 0%, #B3D37B 100%)",
+                buttonBackgroundColor: "#3C4C1E",
+                buttonIconColor: "#FFF",
+                variant: false,
+                isInitialOpen: false,
+                customizations: {
+                    "greeting": "Yes",
+                    "greetingMessage": "Hi! How can I assist you?",
+                    "pulse": "Yes",
+                    "position": "right"
+                },
+                isVoice: true,
+            });
+        });
+    </script>
+</body>
+</html>
