@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCA LAB</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <style type="text/css">
+        /* Add your CSS styles here if needed */
+        body {
+          font-family: 'Arial', sans-serif;
+          background-color: #f4f4f4;
+          margin: 0;
+          padding: 0;
+        }
+
+      .div-container {
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          padding: 40px;
+          width: 80%;
+          max-width: 800px;
+          text-align: left; /* Changed to left align for the instructions */
+          margin: 20px auto; /* Center the container */
+        }
+
+        /* Target ONLY h1, h2, etc. within <main> */
+          main h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            border-bottom: 2px solid #eee; /* This was likely causing the line */
+            padding-bottom: 15px;
+        }
+
+        main h2 {
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+
+        main p { 
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        main ul, main ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        main li {
+            margin-bottom: 8px;
+        }
+
+        /* You can keep these general, or make them 
+           more specific if needed (e.g., main.highlight) */
+      .highlight { 
+            color: #007bff; 
+            font-weight: bold;
+        }
+
+      .emphasize {
+            font-style: italic;
+            color: #6c757d; 
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        /* This media query is fine as it is */
+        @media (max-width: 600px) {
+          .div-container {
+                padding: 20px;
+                width: 95%;
+            }
+
+            main h1 { /* Again, target h1 within <main> */
+                font-size: 2em;
+            }
+
+            main p { /* And target p within <main> */
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" aria-label="Home">
+            <img src="images/logo.png" alt="CCA Lab Logo" class="logo">
+        </a>
+
+        <div class="title-buttons-container">
+            <h1>Course in Computer Application (CCA LAB)</h1>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle menu">
+            ☰ Menu
+        </button>
+
+        <nav class="button-container navbar">
+            <a href="index.html">Home</a>
+            <a href="coursematerials.html">Course Materials</a>
+            <a href="studentsdata.html">Students Data</a>
+            <a href="results.html">Results</a>
+            <a href="photogallery.html">Photo Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="registration.html" target="_blank">Registration</a>
+        </nav>
+
+        <div class="social-media">
+            <a href="https://www.facebook.com/chamaokadena" target="_blank" aria-label="Facebook">
+                <img src="images/facebook-icon.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/kidzy_chamz/" target="_blank" aria-label="Instagram">
+                <img src="images/instagram-icon.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/@kidzychamz-3187" target="_blank" aria-label="YouTube">
+                <img src="images/youtube-icon.png" alt="YouTube" class="social-icon">
+            </a>
+            <a href="mailto:kidzyck@gmail.com" aria-label="Gmail">
+                <img src="images/gmail-icon.png" alt="Gmail" class="social-icon">
+            </a>
+        </div>
+    </header>
+
+<main>
+    <div style="text-align: left; margin: 20px auto; width: 80%; max-width: 800px;">
+        <h1>MS Word Practical Test (20 Marks)</h1>
+
+        <h2>Instructions:</h2>
+        <ol>
+            <li>Create a new MS Word document.</li>
+            <li>Save the document as "YourName_MSWordTest.docx".</li>
+            <li>Complete all the tasks below.</li>
+            <li>Ensure your work is neat and accurate.</li>
+        </ol>
+
+        <h2>Tasks:</h2>
+
+        <h3>Document Formatting (5 Marks):</h3>
+        <ul>
+            <li>Type the following text: "The Importance of Digital Literacy."</li>
+            <li>Apply the "Title" style to this text.</li>
+            <li>Set the page margins to "Narrow".</li>
+            <li>Change the page orientation to "Landscape".</li>
+            <li>Insert a page number at the bottom center of the page.</li>
+        </ul>
+
+        <h3>Paragraph Formatting (5 Marks):</h3>
+        <ul>
+            <li>Type the following paragraph: "Digital literacy is essential in today's world. It enables individuals to effectively use digital technologies. This includes the ability to find, evaluate, create, and communicate information. Developing these skills is crucial for personal and professional success."</li>
+            <li>Justify the paragraph.</li>
+            <li>Set the line spacing to 1.5.</li>
+            <li>Apply a 1st line indent of 0.5 inches.</li>
+            <li>Apply a border around the entire paragraph.</li>
+        </ul>
+
+        <h3>Tables (5 Marks):</h3>
+        <ul>
+            <li>Insert a table with 3 columns and 4 rows.</li>
+            <li>Enter the following data:
+                <ul>
+                    <li>Column 1: "Item", "Laptop", "Printer", "Software"</li>
+                    <li>Column 2: "Price", "$800", "$150", "$50"</li>
+                    <li>Column 3: "Quantity", "1", "1", "2"</li>
+                </ul>
+            </li>
+            <li>Format the first row of the table with a shaded background.</li>
+            <li>Use the word <strong>software</strong> to bold the word.</li>
+        </ul>
+
+        <h3>Insertions (5 Marks):</h3>
+        <ul>
+            <li>Insert a picture from the online pictures that relates to computers.</li>
+            <li>Resize the image to a reasonable size and place it to the right side of the document.</li>
+            <li>Insert a header containing your name and the current date.</li>
+        </ul>
+    </div>
+</main>
+
+    <footer>
+        © 2025 Chamao Kidz
+    </footer>
+    <script src="java/script.js"></script>
+    <script src="https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            window.AgentInitializer.init({
+                agentRenderURL: "https://agent.jotform.com/01952c04cfac713f9534728ed36be33b6f51",
+                rootId: "JotformAgent-01952c04cfac713f9534728ed36be33b6f51",
+                formID: "01952c04cfac713f9534728ed36be33b6f51",
+                queryParams: ["skipWelcome=1", "maximizable=1"],
+                domain: "https://www.jotform.com",
+                isDraggable: false,
+                background: "linear-gradient(180deg, #B3D37B 0%, #B3D37B 100%)",
+                buttonBackgroundColor: "#3C4C1E",
+                buttonIconColor: "#FFF",
+                variant: false,
+                isInitialOpen: false,
+                customizations: {
+                    "greeting": "Yes",
+                    "greetingMessage": "Hi! How can I assist you?",
+                    "pulse": "Yes",
+                    "position": "right"
+                },
+                isVoice: true,
+            });
+        });
+    </script>
+</body>
+</html>

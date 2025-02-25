@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCA LAB</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <style type="text/css">
+      /* Button Styles (Copied from the first snippet) */
+    .test-button-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin-top: 20px;
+      }
+    .test-button {
+          padding: 15px 25px;
+          border: none;
+          border-radius: 5px;
+          color: white;
+          font-size: 16px;
+          cursor: pointer;
+          text-decoration: none;
+          transition: background-color 0.3s ease; /* Add transition */
+      }
+    .msword {
+          background-color: #008080;
+      }
+
+    .msexcel {
+          background-color: #d24726;
+      }
+
+    .mspowerpoint {
+          background-color: #207245;
+      }
+
+    .email {
+          background-color: #6a0dad;
+      }
+      /* Hover effects */
+    .msword:hover {
+          background-color: #1e4079!important; /* Darker blue */
+      }
+
+    .msexcel:hover {
+          background-color: #f6fa11!important; /* Darker green */
+      }
+
+    .mspowerpoint:hover {
+          background-color: #1af51a!important; /* Darker red */
+      }
+
+    .email:hover {
+          background-color: #1f0331!important; /* Darker purple */
+      }
+      h1 {
+          text-align: center;
+      }
+      /* End of button styles */
+  </style>
+<body>
+    <header>
+        <a href="index.html" aria-label="Home">
+            <img src="images/logo.png" alt="CCA Lab Logo" class="logo">
+        </a>
+
+        <div class="title-buttons-container">
+            <h1>Course in Computer Application (CCA LAB)</h1>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle menu">
+            ☰ Menu
+        </button>
+
+        <nav class="button-container navbar">
+            <a href="index.html">Home</a>
+            <a href="coursematerials.html">Course Materials</a>
+            <a href="studentsdata.html">Students Data</a>
+            <a href="results.html">Results</a>
+            <a href="photogallery.html">Photo Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="registration.html" target="_blank">Registration</a>
+        </nav>
+
+        <div class="social-media">
+            <a href="https://www.facebook.com/chamaokadena" target="_blank" aria-label="Facebook">
+                <img src="images/facebook-icon.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/kidzy_chamz/" target="_blank" aria-label="Instagram">
+                <img src="images/instagram-icon.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/@kidzychamz-3187" target="_blank" aria-label="YouTube">
+                <img src="images/youtube-icon.png" alt="YouTube" class="social-icon">
+            </a>
+            <a href="mailto:kidzyck@gmail.com" aria-label="Gmail">
+                <img src="images/gmail-icon.png" alt="Gmail" class="social-icon">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <h1>Practical Test</h1>
+
+        <div class="test-button-container">
+          <a href="wordtest.html" class="test-button msword">MsWord</a>
+          <a href="exceltest.html" class="test-button msexcel">MSExcel</a>
+          <a href="ppttest.html" class="test-button mspowerpoint">MsPowerPoint</a>
+          <a href="emailtest.html" class="test-button email">Email & Computer Fundamentals</a>
+        </div>
+    </main>
+
+    <footer>
+        © 2025 Chamao Kidz
+    </footer>
+    <script src="java/script.js"></script>
+    <script src="https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            window.AgentInitializer.init({
+                agentRenderURL: "https://agent.jotform.com/01952c04cfac713f9534728ed36be33b6f51",
+                rootId: "JotformAgent-01952c04cfac713f9534728ed36be33b6f51",
+                formID: "01952c04cfac713f9534728ed36be33b6f51",
+                queryParams: ["skipWelcome=1", "maximizable=1"],
+                domain: "https://www.jotform.com",
+                isDraggable: false,
+                background: "linear-gradient(180deg, #B3D37B 0%, #B3D37B 100%)",
+                buttonBackgroundColor: "#3C4C1E",
+                buttonIconColor: "#FFF",
+                variant: false,
+                isInitialOpen: false,
+                customizations: {
+                    "greeting": "Yes",
+                    "greetingMessage": "Hi! How can I assist you?",
+                    "pulse": "Yes",
+                    "position": "right"
+                },
+                isVoice: true,
+            });
+        });
+    </script>
+</body>
+</html>

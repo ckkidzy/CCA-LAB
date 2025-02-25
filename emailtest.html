@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCA LAB</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <style type="text/css">
+        /* Add your CSS styles here if needed */
+        body {
+          font-family: 'Arial', sans-serif;
+          background-color: #f4f4f4;
+          margin: 0;
+          padding: 0;
+        }
+
+      .div-container {
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          padding: 40px;
+          width: 80%;
+          max-width: 800px;
+          text-align: left; /* Changed to left align for the instructions */
+          margin: 20px auto; /* Center the container */
+        }
+
+        /* Target ONLY h1, h2, etc. within <main> */
+          main h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            border-bottom: 2px solid #eee; /* This was likely causing the line */
+            padding-bottom: 15px;
+        }
+
+        main h2 {
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+
+        main p { 
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        main ul, main ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        main li {
+            margin-bottom: 8px;
+        }
+
+        /* You can keep these general, or make them 
+           more specific if needed (e.g., main.highlight) */
+      .highlight { 
+            color: #007bff; 
+            font-weight: bold;
+        }
+
+      .emphasize {
+            font-style: italic;
+            color: #6c757d; 
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        /* This media query is fine as it is */
+        @media (max-width: 600px) {
+          .div-container {
+                padding: 20px;
+                width: 95%;
+            }
+
+            main h1 { /* Again, target h1 within <main> */
+                font-size: 2em;
+            }
+
+            main p { /* And target p within <main> */
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" aria-label="Home">
+            <img src="images/logo.png" alt="CCA Lab Logo" class="logo">
+        </a>
+
+        <div class="title-buttons-container">
+            <h1>Course in Computer Application (CCA LAB)</h1>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle menu">
+            ☰ Menu
+        </button>
+
+        <nav class="button-container navbar">
+            <a href="index.html">Home</a>
+            <a href="coursematerials.html">Course Materials</a>
+            <a href="studentsdata.html">Students Data</a>
+            <a href="results.html">Results</a>
+            <a href="photogallery.html">Photo Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="registration.html" target="_blank">Registration</a>
+        </nav>
+
+        <div class="social-media">
+            <a href="https://www.facebook.com/chamaokadena" target="_blank" aria-label="Facebook">
+                <img src="images/facebook-icon.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/kidzy_chamz/" target="_blank" aria-label="Instagram">
+                <img src="images/instagram-icon.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/@kidzychamz-3187" target="_blank" aria-label="YouTube">
+                <img src="images/youtube-icon.png" alt="YouTube" class="social-icon">
+            </a>
+            <a href="mailto:kidzyck@gmail.com" aria-label="Gmail">
+                <img src="images/gmail-icon.png" alt="Gmail" class="social-icon">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div style="text-align: left; margin: 20px auto; width: 80%; max-width: 800px;">
+            <h1>Computer Fundamentals Practical Test (20 Marks)</h1>
+    
+            <h2>Instructions:</h2>
+            <p>This test involves performing tasks on a computer. Complete all tasks.</p>
+    
+            <h2>Tasks:</h2>
+    
+            <h3>File and Folder Management (6 Marks):</h3>
+            <ul>
+                <li>Create a new folder on the desktop named "ComputerFundamentals".</li>
+                <li>Inside the folder, create three subfolders: "Documents", "Images", and "Downloads".</li>
+                <li>Download a sample image and a sample text document from the internet and save them into the appropriate subfolders.</li>
+            </ul>
+    
+            <h3>System Settings (7 Marks):</h3>
+            <ul>
+                <li>Change the desktop background to a different image.</li>
+                <li>Adjust the screen resolution.</li>
+                <li>Demonstrate how to check the current amount of RAM installed on the computer.</li>
+                <li>Demonstrate how to view the currently running programs.</li>
+            </ul>
+    
+            <h3>Internet and Security (7 Marks):</h3>
+            <ul>
+                <li>Open a web browser and search for a specific topic.</li>
+                <li>Bookmark a useful website.</li>
+                <li>Demonstrate how to check for updates to the operating system.</li>
+                <li>Explain the importance of using strong passwords.</li>
+            </ul>
+    
+            <hr>
+    
+            <h1>Email Practical Test (10 Marks)</h1>
+    
+            <h2>Scenario:</h2>
+            <p>You are an administrative assistant at "Tech Solutions Inc." You need to send an email to a potential client, "Global Innovations," to schedule a meeting.</p>
+    
+            <h2>Tasks:</h2>
+    
+            <h3>Compose a New Email (2 Marks):</h3>
+            <ul>
+                <li>Open your email client and compose a new email.</li>
+                <li>Address the email to: contact@globalinnovations.com</li>
+                <li>Set the subject line to: "Meeting Request: Tech Solutions Inc. - [Your Name]"</li>
+            </ul>
+    
+            <h3>Body of the Email (6 Marks):</h3>
+            <ul>
+                <li>Write a professional and concise email body. Include the following:
+                    <ul>
+                        <li>A brief introduction of yourself and Tech Solutions Inc.</li>
+                        <li>A clear statement of the purpose of the email: to schedule a meeting to discuss potential collaboration.</li>
+                        <li>Suggest two specific dates and times for the meeting.</li>
+                        <li>Request confirmation of their availability.</li>
+                        <li>Include your phone number so they can contact you.</li>
+                        <li>End with a professional closing (e.g., "Sincerely," or "Best Regards,").</li>
+                    </ul>
+                </li>
+            </ul>
+    
+            <h3>Attachment (2 Marks):</h3>
+            <ul>
+                <li>Attach a sample document (e.g., a simple text file or a sample company brochure) to the email.</li>
+                <li>Name the attached file "TechSolutions_Info.txt" or similar.</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        © 2025 Chamao Kidz
+    </footer>
+    <script src="java/script.js"></script>
+    <script src="https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            window.AgentInitializer.init({
+                agentRenderURL: "https://agent.jotform.com/01952c04cfac713f9534728ed36be33b6f51",
+                rootId: "JotformAgent-01952c04cfac713f9534728ed36be33b6f51",
+                formID: "01952c04cfac713f9534728ed36be33b6f51",
+                queryParams: ["skipWelcome=1", "maximizable=1"],
+                domain: "https://www.jotform.com",
+                isDraggable: false,
+                background: "linear-gradient(180deg, #B3D37B 0%, #B3D37B 100%)",
+                buttonBackgroundColor: "#3C4C1E",
+                buttonIconColor: "#FFF",
+                variant: false,
+                isInitialOpen: false,
+                customizations: {
+                    "greeting": "Yes",
+                    "greetingMessage": "Hi! How can I assist you?",
+                    "pulse": "Yes",
+                    "position": "right"
+                },
+                isVoice: true,
+            });
+        });
+    </script>
+</body>
+</html>
