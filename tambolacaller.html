@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DBSTI Tambola</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+  <style>
+    /* ─── Base layout ─────────────────────────────────────── */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h2         { color:#0eb015; margin-bottom:8px; }
+    button     { cursor:pointer; font-size:1.1rem; padding:10px 20px;
+                 background:#0eb015; color:#fff; border:none; border-radius:8px; }
+    button:hover { background:#eb1e7e; }
+
+    /* ─── Board container ─────────────────────────────────── */
+    #tambola-board {
+      display:grid;
+      grid-template-columns:repeat(10, 1fr);      /* ← 10 columns always */
+      gap:1px;
+      max-width:600px;                             /* larger screens */
+      margin:10px auto 0;
+    }
+
+    /* ─── Individual cell ────────────────────────────────── */
+    #tambola-board div {
+      aspect-ratio:1 / 1;                          /* keep perfect square */
+      border:1px solid #ccc;
+      border-radius:4px;
+      background:#f3f3f3;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:600;
+      font-size:clamp(0.6rem, 2.8vw, 1rem);        /* scales on phones ↓ */
+      color:#333;
+      user-select:none;
+    }
+
+    /* make gaps a bit tighter on phones */
+    @media (max-width:600px){
+      #tambola-board{ gap:2px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── UI ─────────────────────────────────────────────────── -->
+<div id="tambola-game" class="container">
+  <h2>Tambola Number Caller</h2>
+
+  <div id="tambola-current" style="font:700 2.5rem/1 Arial; color:#0eb015;">–</div>
+
+  <button id="tambola-call">Call&nbsp;Next&nbsp;Number</button>
+
+  <div style="margin:18px auto 0; text-align:left; max-width:350px;">
+    <label style="font-weight:600;">Speed (<span id="rate-val">1.0</span>×)</label>
+    <input type="range" id="voice-rate" min="0.5" max="2" step="0.1" value="1" style="width:100%;">
+
+    <label style="display:block;margin:12px 0 4px;font-weight:600;">Voice</label>
+    <select id="voice-select" style="width:100%;padding:6px;"></select>
+  </div>
+
+  <div id="tambola-board"></div>
+</div>
+
+<!-- ── Script ─────────────────────────────────────────────── -->
+<script>
+(() => {
+  /* ---------- phrases ---------- */
+  const phrases={
+  1: "At the beginning single number 1",
+    2: "Me and you, number 2",
+    3: "Buy two get one fre, single number, 3",
+    4: "Murgi chor, number, 4",
+    5: "Punjab da puttar, single number 5",
+    6: "Chopping sticks, number 6",
+    7: "Colours of rainbow, number, 7",
+    8: "Big fat lady, number 8",
+    9: "Doctor's time, only number, 9",
+    10: "A big fat hen, 1 and,0, number 10",
+    11: "Two beautiful legs, 1 and 1, eleven",
+    12: "One dozen, 1 and 2, 12",
+    13: "Unlucky for some, lucky for me, 1 and 3 number, thirteen",
+    14: "Valentine's Day, 1 and 4, 14",
+    15: "Yet to be kissed, 1 and 5, 15",
+    16: "never been kissed, 1 and 6, 16",
+    17: "Dancing Queen, 1 and 7, 17",
+    18: "Voting age, 1 and 8, 18",
+    19: "Last of the teens, 1 and 9, nineteen",
+    20: "One score, Blind 2 and 0, 20",
+    21: "Marriageable age, 2 and 1, twenty-one",
+    22: "Two little ducks, 2 and 2, 22",
+    23: "You and me, 2 and 3, 23",
+    24: "Two dozen, 2 and 4, 24",
+    25: "Silver Jublee Number, 2 and 5, 25",
+    26: "Republic Day, 2 and 6, 26",
+    27: "Gateway to heaven, 2 and 7, 27",
+    28: "Duck and its mate, 2 and 8, 28",
+    29: "In your prime, 2 and 9, 29",
+    30: "Women get flirty at 30, 3 and 0, 30",
+    31: "Time for fun, 3 and 1, 31",
+    32: "Mouth Full at, 3 and 2, 32",
+    33: "All the threes, 3 and 3, 33",
+    34: "Dil mange more, 3 and 4, 34",
+    35: "Flirty wife, 3 and 5, 35",
+    36: "Popular size, 3 and 6, 36",
+    37: "Mixed luck, 3 and 7, 37",
+    38: "Oversize, 3 and 8, 38",
+    39: "Watch your waistline, 3 and 9, 39",
+    40: "Naughty at 40, 4 and 0, 40",
+    41: "Kiss and run, 4 and 1, 41",
+    42: "Quit India Movement, 4 and 2, 42",
+    43: "Pain in the knee, 4 and 3, 43",
+    44: "All the fours, 4 and 4, 44",
+    45: "Halfway there, 4 and 5, 45",
+    46: "Up to tricks, 4 and 6, 46",
+    47: "Year of Independence, 4 and 7, 47",
+    48: "Four dozen, 4 and 8, 48",
+    49: "Rise and shine, 4 and 9, 49",
+    50: "Golden Jubilee, 5 and 0, 50",
+    51: "Charity begins at 51, 5 and 1, 51",
+    52: "Pack of cards, 5 and 2, 52",
+    53: "Pack with a joker, 5 and 3, 53",
+    54: "Pack with two jokers, 5 and 4, 54",
+    55: "All the fives, 5 and 5, 55",
+    56: "Pick up sticks, 5 and 6, 56",
+    57: "Mutiny Year, 5 and 7, 57",
+    58: "Time to retire, 5 and 8, 58",
+    59: "Just retired, 5 and 9, 59",
+    60: "Five dozen, 6 and 0, 60",
+    61: "Bakers bun, 6 and 1, 61",
+    62: "Click the two, 6 and 2, 62",
+    63: "Click the three, 6 and 3, 63",
+    64: "Catch the chor, 6 and 4, 64",
+    65: "Old age pension, 6 and 5, 65",
+    66: "Chakke pe chakka, 6 and 6, 66",
+    67: "Made in heaven, 6 and 7, 67",
+    68: "Check your weight, 6 and 8, 68",
+    69: "Ulta Pulta, 6 and 9, 69",
+    70: "Lucky blind, 7 and 0, 70",
+    71: "Lucky bachelor, 7 and 1, 71",
+    72: "Lucky couple, 7 and 2, 72",
+    73: "A crutch and a flea, 7 and 3, 73",
+    74: "Lucky chor, 7 and 4, 74",
+    75: "Diamond Jubilee, 7 and 5, 75",
+    76: "Lucky six, 7 and 6, 76",
+    77: "Two hockey sticks, 7 and 7, 77",
+    78: "Heaven's gate, 7 and 8, 78",
+    79: "One more time, 7 and 9, 79",
+    80: "Gandhi's breakfast, 8 and 0, 80",
+    81: "Corner shot, 8 and 1, 81",
+    82: "Last of the two, 8 and 2, 82",
+    83: "India wins Cricket World Cup, 8 and 3, 83",
+    84: "Last of the chors, 8 and 4, 84",
+    85: "Staying alive, 8 and 5, 85",
+    86: "Between the sticks, 8 and 6, 86",
+    87: "Fat lady with a crutch, 8 and 7, 87",
+    88: "Two fat ladies, 8 and 8, 88",
+    89: "Nearly there, 8 and 9, 89",
+    90: "Top of the house, 9 and 0, 90"
+   };
+  /* ---------- DOM ---------- */
+  const boardEl=document.getElementById('tambola-board'),
+        currentEl=document.getElementById('tambola-current'),
+        callBtn=document.getElementById('tambola-call'),
+        rateInput=document.getElementById('voice-rate'),
+        rateVal=document.getElementById('rate-val'),
+        voiceSel=document.getElementById('voice-select');
+
+  /* ---------- build board (no inline width/height) ---------- */
+  const allNums=[...Array(90)].map((_,i)=>i+1);
+  allNums.forEach(n=>{
+    const div=document.createElement('div');
+    div.textContent=n;
+    div.dataset.num=n;
+    boardEl.appendChild(div);
+  });
+
+  /* ---------- speech ---------- */
+  let remaining=[...allNums], currentRate=+rateInput.value;
+  function populateVoices(){
+    voiceSel.innerHTML='';
+    window.speechSynthesis.getVoices()
+      .forEach(v=>voiceSel.insertAdjacentHTML('beforeend',`<option>${v.name}</option>`));
+  }
+  if('speechSynthesis'in window){
+    populateVoices();
+    window.speechSynthesis.onvoiceschanged=populateVoices;
+  }
+  function speak(t){
+    if(!('speechSynthesis'in window))return;
+    const u=new SpeechSynthesisUtterance(t);
+    u.rate=currentRate;
+    const v=window.speechSynthesis.getVoices()
+             .find(v=>v.name===voiceSel.value);
+    if(v)u.voice=v;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(u);
+  }
+
+  /* ---------- events ---------- */
+  callBtn.onclick=()=>{
+    if(!remaining.length)return;
+    const n=remaining.splice(Math.random()*remaining.length|0,1)[0];
+    currentEl.textContent=n;
+    const cell=boardEl.querySelector(`[data-num='${n}']`);
+    if(cell){ cell.style.background='#e6204c'; cell.style.color='#fff'; }
+    speak(phrases[n]);
+    if(!remaining.length)callBtn.disabled=true;
+  };
+  rateInput.oninput=e=>{
+    currentRate=+e.target.value;
+    rateVal.textContent=currentRate.toFixed(1);
+  };
+})();
+</script>
+</body>
+</html>
