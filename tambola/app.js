@@ -2,6 +2,12 @@
 // DBSTI TAMBOLA
 // APP.JS (PART 1)
 // =====================================
+import { db } from "./firebase.js";
+
+import {
+doc,
+setDoc
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 const startTicket = 109;
 const totalTickets = 150;
@@ -299,6 +305,31 @@ allCards[random].style.boxShadow="";
 },1200);
 
 },2500);
+
+async function initializeTickets() {
+
+    for (let i = 109; i <= 258; i++) {
+
+        await setDoc(doc(db, "tickets", String(i)), {
+
+            status: "available",
+
+            name: "",
+
+            phone: "",
+
+            time: ""
+
+        });
+
+    }
+
+    alert("150 tickets created successfully!");
+
+}
+
+// Run ONLY ONCE
+initializeTickets();
 
 
 // =====================================
