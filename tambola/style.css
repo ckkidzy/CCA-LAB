@@ -1,0 +1,1041 @@
+/* ===========================================
+DBSTI TAMBOLA
+STYLE.CSS
+PART 1
+=========================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:
+linear-gradient(135deg,#07121f,#0d2340,#15365d);
+
+color:#fff;
+
+min-height:100vh;
+
+overflow-x:hidden;
+
+}
+
+/* ---------------- Background ---------------- */
+
+.background{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+.circle{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(80px);
+
+animation:float 15s infinite alternate;
+
+}
+
+.c1{
+
+width:300px;
+height:300px;
+
+background:#2196f3;
+
+top:-80px;
+left:-80px;
+
+opacity:.18;
+
+}
+
+.c2{
+
+width:250px;
+height:250px;
+
+background:#00e676;
+
+right:-50px;
+top:120px;
+
+opacity:.12;
+
+animation-duration:18s;
+
+}
+
+.c3{
+
+width:350px;
+height:350px;
+
+background:#ff9800;
+
+bottom:-120px;
+left:20%;
+
+opacity:.12;
+
+animation-duration:20s;
+
+}
+
+.c4{
+
+width:260px;
+height:260px;
+
+background:#e91e63;
+
+right:15%;
+bottom:-90px;
+
+opacity:.12;
+
+animation-duration:16s;
+
+}
+
+/* ---------------- HEADER ---------------- */
+
+header{
+
+padding:20px 20px 10px;
+
+text-align:center;
+
+}
+
+.logo{
+
+font-size:42px;
+
+margin-bottom:5px;
+
+}
+
+header h1{
+
+font-size:34px;
+
+font-weight:800;
+
+margin:5px 0;
+
+}
+
+header p{
+
+font-size:16px;
+
+margin:4px 0 12px;
+
+opacity:.85;
+
+}
+
+.hero-buttons{
+
+margin-top:8px;
+
+gap:10px;
+
+}
+.price {
+padding:8px 18px;
+
+font-size:14px;
+
+border-radius:25px;
+
+background-color:#0b9e1c;
+color:white;
+
+display:inline-block;
+
+}
+.luck {
+
+padding:8px 18px;
+
+font-size:14px;
+
+border-radius:25px;
+
+background-color:#c4c41f;
+color:white;
+
+display:inline-block;
+
+}
+.price:hover,
+.luck:hover{
+
+transform:translateY(-2px);
+
+background:rgba(224, 18, 101);
+
+}/* ---------------- Stats ---------------- */
+
+.stats{
+
+display:flex;
+
+justify-content:center;
+
+gap:12px;
+
+margin:15px 0 25px;
+
+flex-wrap:wrap;
+
+}
+.stat-card{
+
+width:120px;
+
+padding:5px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(12px);
+
+text-align:center;
+
+transition:.3s;
+
+}
+.stat-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.stat-card h2{
+
+font-size:15px;
+
+margin:2px 0;
+
+}
+.stat-card span{
+
+font-size:10px;
+
+letter-spacing:1px;
+
+}
+.emoji{
+
+font-size:15px;
+
+}
+
+/* ---------------- Search ---------------- */
+
+.search-area{
+
+margin:15px auto;
+
+width:90%;
+
+max-width:700px;
+
+}
+.search-area input{
+
+width:100%;
+
+padding:12px;
+
+font-size:12px;
+
+border:none;
+
+border-radius:60px;
+
+outline:none;
+
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+transition:.3s;
+
+}
+
+/* ---------------- Legend ---------------- */
+
+.legend{
+
+display:flex;
+
+justify-content:center;
+
+gap:40px;
+
+margin-bottom:35px;
+
+font-weight:600;
+
+flex-wrap:wrap;
+
+}
+
+.green-dot,
+.orange-dot,
+.red-dot{
+
+width:15px;
+height:15px;
+
+display:inline-block;
+
+border-radius:50%;
+
+margin-right:8px;
+
+}
+
+.green-dot{
+
+background:#2ECC71;
+
+}
+
+.orange-dot{
+
+background:#F39C12;
+
+}
+
+.red-dot{
+
+background:#E74C3C;
+
+}
+
+/* ---------------- Ticket Grid ---------------- */
+
+.ticket-grid{
+
+width:92%;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+
+gap:18px;
+
+padding-bottom:20px;
+
+}
+
+/* ---------------- Ticket ---------------- */
+
+.ticket{
+
+position:relative;
+
+background:white;
+
+border-radius:30px;
+
+padding:28px;
+
+text-align:center;
+
+color:#222;
+
+overflow:hidden;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+
+}
+
+.ticket:hover{
+
+transform:
+
+translateY(-10px)
+
+scale(1.04);
+
+box-shadow:0 30px 60px rgba(0,0,0,.4);
+
+}
+
+/* ticket holes */
+
+.ticket:before{
+
+content:"";
+
+position:absolute;
+
+left:-15px;
+
+top:50%;
+
+width:30px;
+
+height:30px;
+
+border-radius:50%;
+
+background:#10233e;
+
+transform:translateY(-50%);
+
+}
+
+.ticket:after{
+
+content:"";
+
+position:absolute;
+
+right:-15px;
+
+top:50%;
+
+width:30px;
+
+height:30px;
+
+border-radius:50%;
+
+background:#10233e;
+
+transform:translateY(-50%);
+
+}
+
+/* ribbon */
+
+/* ribbon */
+
+.ribbon{
+
+position:absolute;
+
+top: 10px;        /* Reduced from 16px to push it higher up */
+
+right: -42px;     /* Adjusted position so the text centers in the corner */
+
+width: 120px;     /* REDUCED from 150px to 120px */
+
+padding: 3px;     /* REDUCED from 6px to 3px to make the bar thinner */
+
+transform:rotate(45deg);
+
+font-size: 8px;   /* REDUCED from 11px so the text fits nicely */
+
+font-weight:700;
+
+letter-spacing:0.5px; /* Reduced spacing slightly */
+
+color:white;
+
+}
+.available{
+
+background:#27AE60;
+
+}
+
+.reserved{
+
+background:#F39C12;
+
+}
+
+.sold{
+
+background:#E53935;
+
+}
+
+/* ===========================
+TICKET CONTENT
+=========================== */
+
+.ticket-icon{
+
+font-size:55px;
+
+margin-top:15px;
+
+animation:floatLogo 3s infinite;
+
+}
+
+.ticket-title{
+
+margin-top:10px;
+
+letter-spacing:4px;
+
+font-size:14px;
+
+color:#666;
+
+font-weight:600;
+
+}
+
+.ticket-number{
+
+margin:18px 0;
+
+font-size:52px;
+
+font-weight:800;
+
+color:#ff9800;
+
+text-shadow:0 3px 10px rgba(255,152,0,.35);
+
+}
+
+/* Divider */
+
+.ticket hr{
+
+margin:15px 0;
+
+border:none;
+
+height:1px;
+
+background:#ddd;
+
+}
+
+/* Status */
+
+.ticket-status{
+
+display:inline-block;
+
+padding:8px 20px;
+
+border-radius:30px;
+
+font-size:13px;
+
+font-weight:700;
+
+margin-bottom:18px;
+
+}
+
+.status-available{
+
+background:#E8F5E9;
+
+color:#2E7D32;
+
+}
+
+.status-reserved{
+
+background:#FFF3E0;
+
+color:#EF6C00;
+
+}
+
+.status-sold{
+
+background:#FFEBEE;
+
+color:#C62828;
+
+}
+
+/* View Button */
+
+.ticket button{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:40px;
+
+background:linear-gradient(45deg,#1976D2,#42A5F5);
+
+color:white;
+
+font-size:15px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+.ticket button:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 10px 25px rgba(33,150,243,.45);
+
+}
+
+/* ===========================
+POPUP
+=========================== */
+
+.modal{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(0,0,0,.75);
+
+backdrop-filter:blur(8px);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.35s;
+
+z-index:999;
+
+}
+
+.modal.show{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+.modal-box{
+
+width:92%;
+
+max-width:900px;
+
+background:white;
+
+color:#222;
+
+padding:35px;
+
+border-radius:30px;
+
+position:relative;
+
+text-align:center;
+
+animation:popup .35s ease;
+
+box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+}
+
+.modal-box img{
+
+width:100%;
+
+max-height:75vh;
+
+object-fit:contain;
+
+border-radius:20px;
+
+}
+.modal-box h2{
+
+font-size:34px;
+
+margin-top:10px;
+
+}
+
+.modal-status{
+
+display:inline-block;
+
+margin:15px 0;
+
+padding:10px 25px;
+
+border-radius:30px;
+
+background:#E8F5E9;
+
+color:#2E7D32;
+
+font-weight:700;
+
+}
+
+.close{
+
+position:absolute;
+
+top:18px;
+
+right:22px;
+
+width:42px;
+
+height:42px;
+
+border:none;
+
+border-radius:50%;
+
+background:#f5f5f5;
+
+font-size:26px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.close:hover{
+
+background:#e53935;
+
+color:white;
+
+transform:rotate(180deg);
+
+}
+
+#reserveBtn{
+
+margin-top:20px;
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:40px;
+
+background:linear-gradient(45deg,#43A047,#66BB6A);
+
+color:white;
+
+font-size:18px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+#reserveBtn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 15px 35px rgba(67,160,71,.4);
+
+}
+
+/* ===========================
+FOOTER
+=========================== */
+
+footer{
+
+text-align:center;
+
+padding:50px 20px;
+
+font-size:20px;
+
+font-weight:700;
+
+opacity:.85;
+
+}
+
+/* ===========================
+ANIMATIONS
+=========================== */
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+100%{
+
+transform:translateY(35px);
+
+}
+
+}
+
+@keyframes floatLogo{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+@keyframes popup{
+
+0%{
+
+opacity:0;
+
+transform:scale(.75);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+header h1{
+
+font-size:38px;
+
+}
+
+.ticket-grid{
+
+grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+
+}
+
+}
+
+@media(max-width:600px){
+
+.logo{
+
+font-size:55px;
+
+}
+
+header{
+
+padding:40px 15px;
+
+}
+
+header h1{
+
+font-size:30px;
+
+}
+
+header p{
+
+font-size:17px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.ticket{
+
+padding:20px;
+
+}
+
+.ticket-number{
+
+font-size:40px;
+
+}
+
+.modal-box{
+
+padding:20px;
+
+}
+
+.modal-box h2{
+
+font-size:26px;
+
+}
+
+}
+
+/* ===========================
+SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#0b1b33;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#42A5F5;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#1E88E5;
+
+}
+
+/* ==========================
+Ticket Image (Updated Compact Version)
+========================== */
+
+.ticket{
+  padding: 14px 12px; /* reduced overall padding */
+  overflow: hidden;
+}
+
+.ticket-image{
+  width: 100%;
+  height: 110px; /* REDUCED from 230px to 110px */
+  overflow: hidden;
+  border-radius: 12px;
+  background: white;
+  padding: 4px;
+}
+
+.ticket-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: .45s;
+  display: block;
+}
+
+.ticket:hover .ticket-image img{
+  transform: scale(1.08);
+}
+
+.ticket-info{
+  padding-top: 8px; /* REDUCED top spacing from 15px to 8px */
+}
+
+.ticket-info h3{
+  font-size: 16px; /* slightly smaller heading text */
+  margin-top: 8px;
+  margin-bottom: 6px; /* REDUCED margin from 12px to 6px */
+  color: #222;
+}
+
+.ticket-status{
+  padding: 4px 12px; /* reduced badge padding */
+  font-size: 11px;
+  margin-bottom: 8px; /* REDUCED margin from 15px to 8px */
+}
+
+.ticket button{
+  width: 100%;
+  padding: 8px 12px; /* REDUCED button height from 14px to 8px */
+  font-size: 13px;
+}
