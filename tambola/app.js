@@ -160,7 +160,7 @@ document.getElementById("reserveBtn").onclick = function () {
     const ticket =
         document.getElementById("popupTitle").innerText.replace("Ticket ", "");
 
-    const phone = "91YOURNUMBER";
+    const phone = "919615285738";
 
     const message =
 `Hello Sir,
