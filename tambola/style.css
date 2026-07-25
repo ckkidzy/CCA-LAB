@@ -1,27 +1,34 @@
-/* ---------------- GOOGLE FONT ---------------- */
+/* ===========================================
+DBSTI TAMBOLA
+STYLE.CSS
+PART 1
+=========================================== */
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-/* ---------------- BODY ---------------- */
+html{
+scroll-behavior:smooth;
+}
 
 body{
 
-    background:linear-gradient(135deg,#07111f,#11263d,#1b3354);
+background:
+linear-gradient(135deg,#07121f,#0d2340,#15365d);
 
-    min-height:100vh;
+color:#fff;
 
-    color:white;
+min-height:100vh;
 
-    overflow-x:hidden;
+overflow-x:hidden;
 
 }
 
-/* ---------------- BACKGROUND ---------------- */
+/* ---------------- Background ---------------- */
 
 .background{
 
@@ -33,19 +40,83 @@ left:0;
 width:100%;
 height:100%;
 
-pointer-events:none;
-
-opacity:.05;
-
-background-image:
-
-radial-gradient(circle at 20% 20%,#fff 1px,transparent 1px),
-radial-gradient(circle at 80% 30%,#fff 1px,transparent 1px),
-radial-gradient(circle at 40% 70%,#fff 1px,transparent 1px);
-
-background-size:160px 160px;
+overflow:hidden;
 
 z-index:-1;
+
+}
+
+.circle{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(80px);
+
+animation:float 15s infinite alternate;
+
+}
+
+.c1{
+
+width:300px;
+height:300px;
+
+background:#2196f3;
+
+top:-80px;
+left:-80px;
+
+opacity:.18;
+
+}
+
+.c2{
+
+width:250px;
+height:250px;
+
+background:#00e676;
+
+right:-50px;
+top:120px;
+
+opacity:.12;
+
+animation-duration:18s;
+
+}
+
+.c3{
+
+width:350px;
+height:350px;
+
+background:#ff9800;
+
+bottom:-120px;
+left:20%;
+
+opacity:.12;
+
+animation-duration:20s;
+
+}
+
+.c4{
+
+width:260px;
+height:260px;
+
+background:#e91e63;
+
+right:15%;
+bottom:-90px;
+
+opacity:.12;
+
+animation-duration:16s;
 
 }
 
@@ -53,9 +124,9 @@ z-index:-1;
 
 header{
 
-text-align:center;
+padding:60px 20px;
 
-padding:45px 20px;
+text-align:center;
 
 }
 
@@ -63,13 +134,13 @@ padding:45px 20px;
 
 font-size:70px;
 
-animation:float 3s ease-in-out infinite;
+animation:floatLogo 3s infinite ease-in-out;
 
 }
 
-h1{
+header h1{
 
-font-size:3rem;
+font-size:52px;
 
 font-weight:800;
 
@@ -81,173 +152,85 @@ margin-top:10px;
 
 header p{
 
-margin-top:10px;
+margin-top:12px;
 
-font-size:1.2rem;
+font-size:20px;
 
 opacity:.85;
 
 }
 
-.price{
-
-display:inline-block;
+.hero-buttons{
 
 margin-top:25px;
-
-padding:12px 30px;
-
-border-radius:40px;
-
-background:linear-gradient(45deg,#FFD700,#ffb300);
-
-color:#222;
-
-font-weight:bold;
-
-box-shadow:0 10px 30px rgba(255,215,0,.4);
-
-}
-
-/* ---------------- STATS ---------------- */
-
-.stats{
 
 display:flex;
 
 justify-content:center;
 
-gap:30px;
+gap:20px;
 
 flex-wrap:wrap;
 
-margin:30px;
+}
+
+.price{
+
+padding:14px 28px;
+
+border-radius:40px;
+
+background:#FFD54F;
+
+color:#222;
+
+font-weight:700;
+
+box-shadow:0 10px 25px rgba(255,213,79,.4);
+
+}
+
+.luck{
+
+padding:14px 28px;
+
+border-radius:40px;
+
+background:#43A047;
+
+font-weight:700;
+
+box-shadow:0 10px 25px rgba(67,160,71,.35);
+
+}
+
+/* ---------------- Stats ---------------- */
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+
+width:90%;
+
+max-width:1000px;
+
+margin:auto;
 
 }
 
 .stat-card{
 
-width:210px;
-
-padding:28px;
-
-text-align:center;
-
-border-radius:25px;
-
-backdrop-filter:blur(18px);
+backdrop-filter:blur(20px);
 
 background:rgba(255,255,255,.08);
 
 border:1px solid rgba(255,255,255,.15);
 
-box-shadow:0 20px 40px rgba(0,0,0,.25);
-
-transition:.35s;
-
-}
-
-.stat-card:hover{
-
-transform:translateY(-10px);
-
-box-shadow:0 25px 45px rgba(0,0,0,.35);
-
-}
-
-.icon{
-
-font-size:40px;
-
-margin-bottom:12px;
-
-}
-
-.stat-card h2{
-
-font-size:46px;
-
-}
-
-.stat-card span{
-
-letter-spacing:2px;
-
-font-size:13px;
-
-opacity:.85;
-
-}
-
-/* ---------------- SEARCH ---------------- */
-
-.search-section{
-
-text-align:center;
-
-margin:40px;
-
-}
-
-.search-section input{
-
-width:500px;
-
-max-width:92%;
-
-padding:18px;
-
-font-size:18px;
-
-border-radius:50px;
-
-border:none;
-
-outline:none;
-
-background:white;
-
-box-shadow:0 10px 30px rgba(0,0,0,.25);
-
-transition:.3s;
-
-}
-
-.search-section input:focus{
-
-transform:scale(1.02);
-
-box-shadow:0 0 25px #42a5f5;
-
-}
-
-/* ---------------- TICKETS ---------------- */
-
-.tickets{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
-
-gap:28px;
-
-padding:35px;
-
-}
-
-/* ---------------- SINGLE TICKET ---------------- */
-
-.ticket{
-
-position:relative;
-
-overflow:hidden;
-
-background:white;
-
-border-radius:28px;
-
-color:#222;
+border-radius:25px;
 
 padding:30px;
 
@@ -255,21 +238,190 @@ text-align:center;
 
 transition:.35s;
 
+box-shadow:0 15px 35px rgba(0,0,0,.3);
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.stat-card h2{
+
+font-size:48px;
+
+margin:10px 0;
+
+}
+
+.stat-card span{
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+opacity:.85;
+
+font-size:14px;
+
+}
+
+.emoji{
+
+font-size:40px;
+
+}
+
+/* ---------------- Search ---------------- */
+
+.search-area{
+
+margin:50px auto;
+
+width:90%;
+
+max-width:700px;
+
+}
+
+.search-area input{
+
+width:100%;
+
+padding:20px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:60px;
+
+outline:none;
+
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+transition:.3s;
+
+}
+
+.search-area input:focus{
+
+transform:scale(1.02);
+
+box-shadow:0 0 25px #42A5F5;
+
+}
+
+/* ---------------- Legend ---------------- */
+
+.legend{
+
+display:flex;
+
+justify-content:center;
+
+gap:40px;
+
+margin-bottom:35px;
+
+font-weight:600;
+
+flex-wrap:wrap;
+
+}
+
+.green-dot,
+.orange-dot,
+.red-dot{
+
+width:15px;
+height:15px;
+
+display:inline-block;
+
+border-radius:50%;
+
+margin-right:8px;
+
+}
+
+.green-dot{
+
+background:#2ECC71;
+
+}
+
+.orange-dot{
+
+background:#F39C12;
+
+}
+
+.red-dot{
+
+background:#E74C3C;
+
+}
+
+/* ---------------- Ticket Grid ---------------- */
+
+.ticket-grid{
+
+width:92%;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+
+gap:28px;
+
+padding-bottom:70px;
+
+}
+
+/* ---------------- Ticket ---------------- */
+
+.ticket{
+
+position:relative;
+
+background:white;
+
+border-radius:30px;
+
+padding:28px;
+
+text-align:center;
+
+color:#222;
+
+overflow:hidden;
+
 cursor:pointer;
 
-box-shadow:0 20px 35px rgba(0,0,0,.25);
+transition:.35s;
+
+box-shadow:0 20px 40px rgba(0,0,0,.3);
 
 }
 
 .ticket:hover{
 
-transform:translateY(-12px) scale(1.03);
+transform:
 
-box-shadow:0 35px 60px rgba(0,0,0,.35);
+translateY(-10px)
+
+scale(1.04);
+
+box-shadow:0 30px 60px rgba(0,0,0,.4);
 
 }
 
-/* ticket cuts */
+/* ticket holes */
 
 .ticket:before{
 
@@ -277,17 +429,17 @@ content:"";
 
 position:absolute;
 
-left:-16px;
+left:-15px;
 
 top:50%;
 
-width:32px;
+width:30px;
 
-height:32px;
-
-background:#0b1830;
+height:30px;
 
 border-radius:50%;
+
+background:#10233e;
 
 transform:translateY(-50%);
 
@@ -299,17 +451,17 @@ content:"";
 
 position:absolute;
 
-right:-16px;
+right:-15px;
 
 top:50%;
 
-width:32px;
+width:30px;
 
-height:32px;
-
-background:#0b1830;
+height:30px;
 
 border-radius:50%;
+
+background:#10233e;
 
 transform:translateY(-50%);
 
@@ -321,13 +473,11 @@ transform:translateY(-50%);
 
 position:absolute;
 
-top:15px;
+top:16px;
 
-right:-35px;
+right:-38px;
 
-width:140px;
-
-text-align:center;
+width:150px;
 
 padding:6px;
 
@@ -335,176 +485,169 @@ transform:rotate(45deg);
 
 font-size:11px;
 
-font-weight:bold;
-
-color:white;
+font-weight:700;
 
 letter-spacing:1px;
 
-}
-
-.available-ribbon{
-
-background:#28a745;
+color:white;
 
 }
 
-.reserved-ribbon{
+.available{
 
-background:#ff9800;
-
-}
-
-.sold-ribbon{
-
-background:#e53935;
+background:#27AE60;
 
 }
 
-/* icon */
+.reserved{
+
+background:#F39C12;
+
+}
+
+.sold{
+
+background:#E53935;
+
+}
+
+/* ===========================
+TICKET CONTENT
+=========================== */
 
 .ticket-icon{
 
 font-size:55px;
 
-margin-top:25px;
+margin-top:15px;
+
+animation:floatLogo 3s infinite;
 
 }
-
-/* title */
 
 .ticket-title{
 
 margin-top:10px;
 
-font-size:15px;
+letter-spacing:4px;
 
-letter-spacing:3px;
+font-size:14px;
 
 color:#666;
 
-}
+font-weight:600;
 
-/* number */
+}
 
 .ticket-number{
 
-margin:15px 0;
+margin:18px 0;
 
-font-size:48px;
+font-size:52px;
 
 font-weight:800;
 
 color:#ff9800;
 
-text-shadow:0 2px 8px rgba(255,152,0,.35);
+text-shadow:0 3px 10px rgba(255,152,0,.35);
 
 }
 
-/* button */
+/* Divider */
+
+.ticket hr{
+
+margin:15px 0;
+
+border:none;
+
+height:1px;
+
+background:#ddd;
+
+}
+
+/* Status */
+
+.ticket-status{
+
+display:inline-block;
+
+padding:8px 20px;
+
+border-radius:30px;
+
+font-size:13px;
+
+font-weight:700;
+
+margin-bottom:18px;
+
+}
+
+.status-available{
+
+background:#E8F5E9;
+
+color:#2E7D32;
+
+}
+
+.status-reserved{
+
+background:#FFF3E0;
+
+color:#EF6C00;
+
+}
+
+.status-sold{
+
+background:#FFEBEE;
+
+color:#C62828;
+
+}
+
+/* View Button */
 
 .ticket button{
 
-padding:12px 26px;
+width:100%;
+
+padding:14px;
 
 border:none;
 
 border-radius:40px;
 
-background:linear-gradient(45deg,#1e88e5,#42a5f5);
+background:linear-gradient(45deg,#1976D2,#42A5F5);
 
 color:white;
+
+font-size:15px;
 
 font-weight:700;
 
 cursor:pointer;
 
-transition:.3s;
+transition:.35s;
 
 }
 
 .ticket button:hover{
 
-transform:scale(1.08);
+transform:scale(1.05);
+
+box-shadow:0 10px 25px rgba(33,150,243,.45);
 
 }
 
-/* ---------------- FOOTER ---------------- */
+/* ===========================
+POPUP
+=========================== */
 
-footer{
-
-margin-top:60px;
-
-padding:35px;
-
-text-align:center;
-
-font-size:22px;
-
-font-weight:bold;
-
-}
-
-/* ---------------- ANIMATION ---------------- */
-
-@keyframes float{
-
-0%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-12px);
-
-}
-
-100%{
-
-transform:translateY(0);
-
-}
-
-}
-
-/* ---------------- MOBILE ---------------- */
-
-@media(max-width:768px){
-
-h1{
-
-font-size:2rem;
-
-}
-
-.ticket{
-
-padding:25px;
-
-}
-
-.ticket-number{
-
-font-size:40px;
-
-}
-
-.stat-card{
-
-width:100%;
-
-max-width:320px;
-
-}
-
-}
-/* ========================= */
-/* POPUP */
-/* ========================= */
-
-.popup{
+.modal{
 
 position:fixed;
 
@@ -514,27 +657,27 @@ left:0;
 width:100%;
 height:100%;
 
-background:rgba(0,0,0,.75);
-
 display:flex;
 
 justify-content:center;
 
 align-items:center;
 
+background:rgba(0,0,0,.75);
+
+backdrop-filter:blur(8px);
+
 opacity:0;
 
 visibility:hidden;
 
-transition:.3s;
+transition:.35s;
 
 z-index:999;
 
-backdrop-filter:blur(8px);
-
 }
 
-.popup.show{
+.modal.show{
 
 opacity:1;
 
@@ -542,69 +685,123 @@ visibility:visible;
 
 }
 
-.popup-box{
+.modal-box{
+
+width:92%;
+
+max-width:650px;
 
 background:white;
 
 color:#222;
 
-padding:30px;
+padding:35px;
 
-border-radius:25px;
-
-width:90%;
-
-max-width:500px;
-
-text-align:center;
+border-radius:30px;
 
 position:relative;
 
-animation:popup .35s;
+text-align:center;
+
+animation:popup .35s ease;
+
+box-shadow:0 20px 50px rgba(0,0,0,.35);
 
 }
 
-.popup-box img{
+.modal-box img{
 
 width:100%;
 
-border-radius:15px;
+border-radius:20px;
 
-margin:15px 0;
+margin:20px 0;
 
-box-shadow:0 10px 25px rgba(0,0,0,.25);
+box-shadow:0 15px 35px rgba(0,0,0,.25);
 
 }
 
-.close-popup{
+.modal-box h2{
+
+font-size:34px;
+
+margin-top:10px;
+
+}
+
+.modal-status{
+
+display:inline-block;
+
+margin:15px 0;
+
+padding:10px 25px;
+
+border-radius:30px;
+
+background:#E8F5E9;
+
+color:#2E7D32;
+
+font-weight:700;
+
+}
+
+.close{
 
 position:absolute;
 
-top:15px;
+top:18px;
 
-right:20px;
+right:22px;
 
-font-size:30px;
+width:42px;
+
+height:42px;
+
+border:none;
+
+border-radius:50%;
+
+background:#f5f5f5;
+
+font-size:26px;
 
 cursor:pointer;
+
+transition:.3s;
+
+}
+
+.close:hover{
+
+background:#e53935;
+
+color:white;
+
+transform:rotate(180deg);
 
 }
 
 #reserveBtn{
 
-margin-top:15px;
+margin-top:20px;
 
-padding:14px 35px;
+width:100%;
+
+padding:16px;
 
 border:none;
 
 border-radius:40px;
 
-background:#28a745;
+background:linear-gradient(45deg,#43A047,#66BB6A);
 
 color:white;
 
 font-size:18px;
+
+font-weight:700;
 
 cursor:pointer;
 
@@ -614,26 +811,204 @@ transition:.3s;
 
 #reserveBtn:hover{
 
-transform:scale(1.05);
+transform:translateY(-3px);
+
+box-shadow:0 15px 35px rgba(67,160,71,.4);
+
+}
+
+/* ===========================
+FOOTER
+=========================== */
+
+footer{
+
+text-align:center;
+
+padding:50px 20px;
+
+font-size:20px;
+
+font-weight:700;
+
+opacity:.85;
+
+}
+
+/* ===========================
+ANIMATIONS
+=========================== */
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+100%{
+
+transform:translateY(35px);
+
+}
+
+}
+
+@keyframes floatLogo{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
 
 }
 
 @keyframes popup{
 
-from{
-
-transform:scale(.7);
+0%{
 
 opacity:0;
 
+transform:scale(.75);
+
 }
 
-to{
-
-transform:scale(1);
+100%{
 
 opacity:1;
 
+transform:scale(1);
+
 }
+
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+header h1{
+
+font-size:38px;
+
+}
+
+.ticket-grid{
+
+grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+
+}
+
+}
+
+@media(max-width:600px){
+
+.logo{
+
+font-size:55px;
+
+}
+
+header{
+
+padding:40px 15px;
+
+}
+
+header h1{
+
+font-size:30px;
+
+}
+
+header p{
+
+font-size:17px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.ticket{
+
+padding:20px;
+
+}
+
+.ticket-number{
+
+font-size:40px;
+
+}
+
+.modal-box{
+
+padding:20px;
+
+}
+
+.modal-box h2{
+
+font-size:26px;
+
+}
+
+}
+
+/* ===========================
+SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#0b1b33;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#42A5F5;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#1E88E5;
 
 }
