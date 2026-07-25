@@ -3,7 +3,9 @@
 // APP.JS (PART 1)
 // =====================================
 
-const totalTickets = 180;
+const startTicket = 109;
+const totalTickets = 150;
+const endTicket = startTicket + totalTickets -1;
 
 const ticketGrid = document.getElementById("ticketGrid");
 const searchBox = document.getElementById("search");
@@ -26,7 +28,7 @@ function createTickets() {
 
     ticketGrid.innerHTML = "";
 
-    for (let i = 1; i <= totalTickets; i++) {
+    for (let i = startTicket; i <= endTicket; i++) {
 
         const number = String(i).padStart(3, "0");
 
