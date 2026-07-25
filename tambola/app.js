@@ -1,36 +1,46 @@
-// ===============================
-// DBSTI TAMBOLA APP
-// ===============================
+// =====================================
+// DBSTI TAMBOLA
+// APP.JS (PART 1)
+// =====================================
 
-// Ticket Folder
-const ticketFolder = "tickets/";
-
-// Total Tickets
 const totalTickets = 180;
 
-// Grid
-const ticketsContainer = document.querySelector(".tickets");
+const ticketGrid = document.getElementById("ticketGrid");
+const searchBox = document.getElementById("search");
 
-// Search
-const searchInput = document.getElementById("search");
+const modal = document.getElementById("ticketModal");
+const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+const modalStatus = document.getElementById("modalStatus");
 
-// ---------- CREATE TICKETS ----------
+const reserveBtn = document.getElementById("reserveBtn");
+const closeBtn = document.getElementById("closeModal");
 
-ticketsContainer.innerHTML = "";
+let selectedTicket = "";
 
-for (let i = 1; i <= totalTickets; i++) {
+// =====================================
+// CREATE TICKETS
+// =====================================
 
-    const number = String(i).padStart(3, "0");
+function createTickets() {
 
-    const ticket = document.createElement("div");
+    ticketGrid.innerHTML = "";
 
-    ticket.className = "ticket available";
+    for (let i = 1; i <= totalTickets; i++) {
 
-    ticket.setAttribute("data-ticket", number);
+        const number = String(i).padStart(3, "0");
 
-    ticket.innerHTML = `
+        const ticket = document.createElement("div");
 
-        <div class="ribbon available-ribbon">
+        ticket.className = "ticket";
+
+        ticket.dataset.ticket = number;
+
+        ticket.dataset.status = "available";
+
+        ticket.innerHTML = `
+
+        <div class="ribbon available">
             AVAILABLE
         </div>
 
@@ -46,23 +56,37 @@ for (let i = 1; i <= totalTickets; i++) {
             ${number}
         </div>
 
-        <button class="view-btn">
-            VIEW
+        <hr>
+
+        <div class="ticket-status status-available">
+            Available
+        </div>
+
+        <button class="viewTicket">
+            View Ticket
         </button>
 
-    `;
+        `;
 
-    ticketsContainer.appendChild(ticket);
+        ticketGrid.appendChild(ticket);
+
+    }
 
 }
 
-// ---------- SEARCH ----------
+createTickets();
 
-searchInput.addEventListener("keyup", function () {
+// =====================================
+// SEARCH
+// =====================================
+
+searchBox.addEventListener("keyup", function () {
 
     const value = this.value.trim();
 
-    document.querySelectorAll(".ticket").forEach(ticket => {
+    const tickets = document.querySelectorAll(".ticket");
+
+    tickets.forEach(ticket => {
 
         const number = ticket.dataset.ticket;
 
@@ -70,7 +94,9 @@ searchInput.addEventListener("keyup", function () {
 
             ticket.style.display = "block";
 
-        } else {
+        }
+
+        else {
 
             ticket.style.display = "none";
 
@@ -80,104 +106,196 @@ searchInput.addEventListener("keyup", function () {
 
 });
 
-// ---------- POPUP ----------
+// =====================================
+// OPEN POPUP
+// =====================================
 
-const popup = document.createElement("div");
+document.addEventListener("click", function(e){
 
-popup.className = "popup";
+    if(!e.target.classList.contains("viewTicket")) return;
 
-popup.innerHTML = `
+    const card = e.target.closest(".ticket");
 
-<div class="popup-box">
+    selectedTicket = card.dataset.ticket;
 
-<span class="close-popup">&times;</span>
+    modalTitle.innerHTML = "Ticket " + selectedTicket;
 
-<img id="popupImage">
+    modalImage.src =
+    "tickets/ticket_" + selectedTicket + ".jpg";
 
-<h2 id="popupTitle"></h2>
+    modalStatus.innerHTML="🟢 Available";
 
-<p id="popupStatus"></p>
-
-<button id="reserveBtn">
-
-Reserve Ticket
-
-</button>
-
-</div>
-
-`;
-
-document.body.appendChild(popup);
-
-// ---------- OPEN POPUP ----------
-
-document.querySelectorAll(".view-btn").forEach(btn => {
-
-    btn.addEventListener("click", function (e) {
-
-        e.stopPropagation();
-
-        const ticket = this.parentElement;
-
-        const number = ticket.dataset.ticket;
-
-        document.getElementById("popupImage").src =
-            ticketFolder + "ticket_" + number + ".jpg";
-
-        document.getElementById("popupTitle").innerHTML =
-            "Ticket " + number;
-
-        document.getElementById("popupStatus").innerHTML =
-            "🟢 Available";
-
-        popup.classList.add("show");
-
-    });
+    modal.classList.add("show");
 
 });
 
-// ---------- CLOSE ----------
+// =====================================
+// CLOSE
+// =====================================
 
-document.querySelector(".close-popup").onclick = () => {
+closeBtn.onclick=function(){
 
-    popup.classList.remove("show");
+modal.classList.remove("show");
 
-};
+}
 
-popup.onclick = function (e) {
+modal.onclick=function(e){
 
-    if (e.target == popup)
+if(e.target===modal){
 
-        popup.classList.remove("show");
+modal.classList.remove("show");
 
-};
+}
 
-// ---------- RESERVE ----------
+}
 
-document.getElementById("reserveBtn").onclick = function () {
+// =====================================
+// RESERVE BUTTON
+// =====================================
 
-    const ticket =
-        document.getElementById("popupTitle").innerText.replace("Ticket ", "");
+reserveBtn.addEventListener("click", function () {
 
-    const phone = "919615285738";
+    const phone = "91XXXXXXXXXX"; // <-- Replace with your WhatsApp number
 
     const message =
 `Hello Sir,
 
-I would like to reserve Ticket ${ticket}.
+I would like to reserve Tambola Ticket ${selectedTicket}.
 
-Name :
+Name:
+Phone:
 
-Phone :
-`;
+Thank you.`;
 
     window.open(
-
         `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
-
         "_blank"
-
     );
 
-};
+});
+
+// =====================================
+// COUNTERS
+// =====================================
+
+function updateCounters(){
+
+    const available =
+    document.querySelectorAll(".status-available").length;
+
+    const reserved =
+    document.querySelectorAll(".status-reserved").length;
+
+    const sold =
+    document.querySelectorAll(".status-sold").length;
+
+    document.getElementById("availableCount").innerHTML=available;
+
+    document.getElementById("reservedCount").innerHTML=reserved;
+
+    document.getElementById("soldCount").innerHTML=sold;
+
+}
+
+updateCounters();
+
+
+// =====================================
+// IMAGE ERROR
+// =====================================
+
+modalImage.onerror=function(){
+
+this.src="images/notfound.jpg";
+
+}
+
+
+// =====================================
+// ESC KEY CLOSE
+// =====================================
+
+document.addEventListener("keydown",function(e){
+
+if(e.key==="Escape"){
+
+modal.classList.remove("show");
+
+}
+
+});
+
+
+// =====================================
+// SMALL CARD ANIMATION
+// =====================================
+
+const cards=document.querySelectorAll(".ticket");
+
+cards.forEach((card,index)=>{
+
+card.style.opacity="0";
+
+card.style.transform="translateY(40px)";
+
+setTimeout(()=>{
+
+card.style.transition=".5s";
+
+card.style.opacity="1";
+
+card.style.transform="translateY(0)";
+
+},index*15);
+
+});
+
+
+// =====================================
+// HOVER EFFECT
+// =====================================
+
+cards.forEach(card=>{
+
+card.addEventListener("mouseenter",()=>{
+
+card.style.zIndex="100";
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.zIndex="1";
+
+});
+
+});
+
+
+// =====================================
+// RANDOM GLOW
+// =====================================
+
+setInterval(()=>{
+
+const allCards=document.querySelectorAll(".ticket");
+
+const random=Math.floor(Math.random()*allCards.length);
+
+allCards[random].style.boxShadow=
+"0 0 35px rgba(255,215,0,.7)";
+
+setTimeout(()=>{
+
+allCards[random].style.boxShadow="";
+
+},1200);
+
+},2500);
+
+
+// =====================================
+// CONSOLE
+// =====================================
+
+console.log("🍀 DBSTI Tambola Loaded Successfully");
