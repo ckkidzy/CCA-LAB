@@ -1,7 +1,5 @@
 /* ===========================================
 DBSTI TAMBOLA
-STYLE.CSS
-PART 1
 =========================================== */
 
 *{
@@ -17,8 +15,10 @@ scroll-behavior:smooth;
 
 body{
 
-background:
-linear-gradient(135deg,#07121f,#0d2340,#15365d);
+background: 
+  linear-gradient(rgba(7, 18, 31, 0.80), rgba(7, 18, 31, 0.80)),
+  url('tambolabg.jpeg') no-repeat center center fixed;
+background-size: cover;
 
 color:#fff;
 
@@ -186,7 +186,7 @@ font-size:14px;
 
 border-radius:25px;
 
-background-color:#c4c41f;
+background-color:#a32607;
 color:white;
 
 display:inline-block;
@@ -222,9 +222,10 @@ padding:5px;
 
 border-radius:18px;
 
-background:rgba(255,255,255,.08);
+background:rgba(66, 8, 166,1);
 
 backdrop-filter:blur(12px);
+-webkit-backdrop-filter: blur(12px);
 
 text-align:center;
 
