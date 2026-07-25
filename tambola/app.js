@@ -6,7 +6,9 @@ import { db } from "./firebase.js";
 
 import {
 doc,
-setDoc
+setDoc,
+getDocs,
+collection
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 const startTicket = 109;
@@ -88,6 +90,7 @@ View Ticket
 }
 
 createTickets();
+loadTicketStatus();
 
 // =====================================
 // SEARCH
@@ -330,6 +333,59 @@ async function initializeTickets() {
 
 // Run ONLY ONCE
 
+async function loadTicketStatus() {
+
+    const snapshot = await getDocs(collection(db, "tickets"));
+
+    snapshot.forEach((document) => {
+
+        const id = document.id;
+
+        const data = document.data();
+
+        const card = document.querySelector(`[data-ticket="${id}"]`);
+
+        if (!card) return;
+
+        const ribbon = card.querySelector(".ribbon");
+        const status = card.querySelector(".ticket-status");
+
+        ribbon.classList.remove("available", "reserved", "sold");
+        status.classList.remove("status-available", "status-reserved", "status-sold");
+
+        if (data.status === "available") {
+
+            ribbon.classList.add("available");
+            ribbon.innerHTML = "AVAILABLE";
+
+            status.classList.add("status-available");
+            status.innerHTML = "🟢 Available";
+
+        }
+
+        else if (data.status === "reserved") {
+
+            ribbon.classList.add("reserved");
+            ribbon.innerHTML = "RESERVED";
+
+            status.classList.add("status-reserved");
+            status.innerHTML = "🟠 Reserved";
+
+        }
+
+        else {
+
+            ribbon.classList.add("sold");
+            ribbon.innerHTML = "SOLD";
+
+            status.classList.add("status-sold");
+            status.innerHTML = "🔴 Sold";
+
+        }
+
+    });
+
+}
 
 // =====================================
 // CONSOLE
