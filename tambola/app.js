@@ -329,7 +329,6 @@ async function initializeTickets() {
 }
 
 // Run ONLY ONCE
-initializeTickets();
 
 
 // =====================================
