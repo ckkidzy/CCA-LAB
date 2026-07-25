@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>DBSTI Tambola 2026</title>
 
@@ -12,373 +13,273 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="background"></div>
+<!-- Animated Background -->
+
+<div class="background">
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+<div class="circle c4"></div>
+</div>
+
+<!-- Hero -->
 
 <header>
 
 <div class="logo">
+
 🍀
+
 </div>
 
-<h1>DBSTI TAMBOLA 2026</h1>
+<h1>
+
+DBSTI TAMBOLA 2026
+
+</h1>
 
 <p>
+
 Choose Your Lucky Ticket
+
 </p>
+
+<div class="hero-buttons">
 
 <div class="price">
 
-🎟 ₹10 Per Ticket
+🎟 Ticket Price ₹10
+
+</div>
+
+<div class="luck">
+
+🍀 Good Luck!
+
+</div>
 
 </div>
 
 </header>
 
+<!-- Statistics -->
 
 <section class="stats">
 
-<div class="stat-card">
+<div class="stat-card available-card">
 
-<div class="icon">
+<div class="emoji">
+
 🟢
-</div>
-
-<h2 id="available">180</h2>
-
-<span>AVAILABLE</span>
 
 </div>
 
-<div class="stat-card">
+<h2 id="availableCount">
 
-<div class="icon">
+180
+
+</h2>
+
+<span>
+
+Available
+
+</span>
+
+</div>
+
+<div class="stat-card reserved-card">
+
+<div class="emoji">
+
 🟠
-</div>
-
-<h2 id="reserved">0</h2>
-
-<span>RESERVED</span>
 
 </div>
 
-<div class="stat-card">
+<h2 id="reservedCount">
 
-<div class="icon">
+0
+
+</h2>
+
+<span>
+
+Reserved
+
+</span>
+
+</div>
+
+<div class="stat-card sold-card">
+
+<div class="emoji">
+
 🔴
+
 </div>
 
-<h2 id="sold">0</h2>
+<h2 id="soldCount">
 
-<span>SOLD</span>
+0
+
+</h2>
+
+<span>
+
+Sold
+
+</span>
 
 </div>
 
 </section>
 
+<!-- Search -->
 
-
-<section class="search-section">
+<section class="search-area">
 
 <input
+
 type="text"
-placeholder="🔍 Search Ticket Number..."
-id="search">
+
+id="search"
+
+placeholder="🔍 Search Ticket Number (001 - 180)"
+
+>
 
 </section>
 
+<!-- Legend -->
 
+<section class="legend">
 
-<section class="tickets">
+<div>
 
+<span class="green-dot"></span>
 
-
-
-<div class="ticket available">
-
-<div class="ribbon available-ribbon">
-AVAILABLE
-</div>
-
-<div class="ticket-icon">
-🎟
-</div>
-
-<div class="ticket-title">
-TICKET
-</div>
-
-<div class="ticket-number">
-001
-</div>
-
-<button>
-VIEW
-</button>
+Available
 
 </div>
 
+<div>
 
+<span class="orange-dot"></span>
 
-
-<div class="ticket available">
-
-<div class="ribbon available-ribbon">
-AVAILABLE
-</div>
-
-<div class="ticket-icon">
-🎟
-</div>
-
-<div class="ticket-title">
-TICKET
-</div>
-
-<div class="ticket-number">
-002
-</div>
-
-<button>
-VIEW
-</button>
+Reserved
 
 </div>
 
+<div>
 
+<span class="red-dot"></span>
 
-
-<div class="ticket available">
-
-<div class="ribbon available-ribbon">
-AVAILABLE
-</div>
-
-<div class="ticket-icon">
-🎟
-</div>
-
-<div class="ticket-title">
-TICKET
-</div>
-
-<div class="ticket-number">
-003
-</div>
-
-<button>
-VIEW
-</button>
+Sold
 
 </div>
-
-
-
-
-<div class="ticket available">
-
-<div class="ribbon available-ribbon">
-AVAILABLE
-</div>
-
-<div class="ticket-icon">
-🎟
-</div>
-
-<div class="ticket-title">
-TICKET
-</div>
-
-<div class="ticket-number">
-004
-</div>
-
-<button>
-VIEW
-</button>
-
-</div>
-
-
-
-
-<div class="ticket available">
-
-<div class="ribbon available-ribbon">
-AVAILABLE
-</div>
-
-<div class="ticket-icon">
-🎟
-</div>
-
-<div class="ticket-title">
-TICKET
-</div>
-
-<div class="ticket-number">
-005
-</div>
-
-<button>
-VIEW
-</button>
-
-</div>
-
-
-
-
-<div class="ticket available">
-
-<div class="ribbon available-ribbon">
-AVAILABLE
-</div>
-
-<div class="ticket-icon">
-🎟
-</div>
-
-<div class="ticket-title">
-TICKET
-</div>
-
-<div class="ticket-number">
-006
-</div>
-
-<button>
-VIEW
-</button>
-
-</div>
-
-
-
-
-<div class="ticket available">
-
-<div class="ribbon available-ribbon">
-AVAILABLE
-</div>
-
-<div class="ticket-icon">
-🎟
-</div>
-
-<div class="ticket-title">
-TICKET
-</div>
-
-<div class="ticket-number">
-007
-</div>
-
-<button>
-VIEW
-</button>
-
-</div>
-
-
-
-
-<div class="ticket available">
-
-<div class="ribbon available-ribbon">
-AVAILABLE
-</div>
-
-<div class="ticket-icon">
-🎟
-</div>
-
-<div class="ticket-title">
-TICKET
-</div>
-
-<div class="ticket-number">
-008
-</div>
-
-<button>
-VIEW
-</button>
-
-</div>
-
-
-
-
-<div class="ticket available">
-
-<div class="ribbon available-ribbon">
-AVAILABLE
-</div>
-
-<div class="ticket-icon">
-🎟
-</div>
-
-<div class="ticket-title">
-TICKET
-</div>
-
-<div class="ticket-number">
-009
-</div>
-
-<button>
-VIEW
-</button>
-
-</div>
-
-
-
-
-<div class="ticket available">
-
-<div class="ribbon available-ribbon">
-AVAILABLE
-</div>
-
-<div class="ticket-icon">
-🎟
-</div>
-
-<div class="ticket-title">
-TICKET
-</div>
-
-<div class="ticket-number">
-010
-</div>
-
-<button>
-VIEW
-</button>
-
-</div>
-
-
 
 </section>
 
+<!-- Ticket Grid -->
 
+<section
 
+class="ticket-grid"
+
+id="ticketGrid"
+
+>
+
+<!-- JavaScript will automatically generate 180 tickets here -->
+
+</section>
+
+<!-- Popup -->
+
+<div
+
+class="modal"
+
+id="ticketModal"
+
+>
+
+<div class="modal-box">
+
+<button
+
+class="close"
+
+id="closeModal"
+
+>
+
+×
+
+</button>
+
+<h2 id="modalTitle">
+
+Ticket 001
+
+</h2>
+
+<img
+
+id="modalImage"
+
+src=""
+
+alt="Ticket"
+
+>
+
+<div
+
+class="modal-status"
+
+id="modalStatus"
+
+>
+
+🟢 Available
+
+</div>
+
+<button
+
+id="reserveBtn"
+
+>
+
+Reserve via WhatsApp
+
+</button>
+
+</div>
+
+</div>
 
 <footer>
 
-🍀 GOOD LUCK!
+🍀
+
+May the Luckiest Player Win!
+
+<br>
+
+DBSTI Tambola 2026
 
 </footer>
 
+<script src="app.js"></script>
 
 </body>
+
 </html>
