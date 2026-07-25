@@ -335,7 +335,11 @@ async function initializeTickets() {
 
 async function loadTicketStatus() {
 
+    console.log("Loading ticket status...");
+
     const snapshot = await getDocs(collection(db, "tickets"));
+
+    console.log("Documents found:", snapshot.size);
 
     snapshot.forEach((document) => {
 
