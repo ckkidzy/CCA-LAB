@@ -1,59 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DBSTI Tambola 2026</title>
 
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script type="module" src="firebase.js"></script>
-    <script type="module" src="app.js"></script>
+<title>DBSTI Tambola 2026</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
+<div class="background"></div>
+
 <header>
 
-<h1>🍀 DBSTI TAMBOLA 2026</h1>
+<div class="logo">
+🍀
+</div>
 
-<p>Choose Your Lucky Ticket</p>
+<h1>DBSTI TAMBOLA 2026</h1>
+
+<p>
+Choose Your Lucky Ticket
+</p>
+
+<div class="price">
+
+🎟 ₹10 Per Ticket
+
+</div>
 
 </header>
 
+
 <section class="stats">
 
-<div class="card">
-<h2 id="available">0</h2>
-<p>Available</p>
+<div class="stat-card">
+
+<div class="icon">
+🟢
 </div>
 
-<div class="card">
+<h2 id="available">180</h2>
+
+<span>AVAILABLE</span>
+
+</div>
+
+<div class="stat-card">
+
+<div class="icon">
+🟠
+</div>
+
 <h2 id="reserved">0</h2>
-<p>Reserved</p>
+
+<span>RESERVED</span>
+
 </div>
 
-<div class="card">
+<div class="stat-card">
+
+<div class="icon">
+🔴
+</div>
+
 <h2 id="sold">0</h2>
-<p>Sold</p>
+
+<span>SOLD</span>
+
 </div>
 
 </section>
 
-<section class="search">
+
+
+<section class="search-section">
 
 <input
 type="text"
-id="search"
-placeholder="Search Ticket Number">
+placeholder="🔍 Search Ticket Number..."
+id="search">
 
 </section>
 
-<section id="tickets" class="tickets">
 
-<!-- Tickets appear here -->
+
+<section class="tickets">
+
+
+
+
+<div class="ticket available">
+
+<div class="ribbon available-ribbon">
+AVAILABLE
+</div>
+
+<div class="ticket-icon">
+🎟
+</div>
+
+<div class="ticket-title">
+TICKET
+</div>
+
+<div class="ticket-number">
+001
+</div>
+
+<button>
+VIEW
+</button>
+
+</div>
+
+
+
+
+<div class="ticket available">
+
+<div class="ribbon available-ribbon">
+AVAILABLE
+</div>
+
+<div class="ticket-icon">
+🎟
+</div>
+
+<div class="ticket-title">
+TICKET
+</div>
+
+<div class="ticket-number">
+002
+</div>
+
+<button>
+VIEW
+</button>
+
+</div>
+
+
+
+
+<div class="ticket available">
+
+<div class="ribbon available-ribbon">
+AVAILABLE
+</div>
+
+<div class="ticket-icon">
+🎟
+</div>
+
+<div class="ticket-title">
+TICKET
+</div>
+
+<div class="ticket-number">
+003
+</div>
+
+<button>
+VIEW
+</button>
+
+</div>
+
+
+
+
+<div class="ticket available">
+
+<div class="ribbon available-ribbon">
+AVAILABLE
+</div>
+
+<div class="ticket-icon">
+🎟
+</div>
+
+<div class="ticket-title">
+TICKET
+</div>
+
+<div class="ticket-number">
+004
+</div>
+
+<button>
+VIEW
+</button>
+
+</div>
+
+
+
+
+<div class="ticket available">
+
+<div class="ribbon available-ribbon">
+AVAILABLE
+</div>
+
+<div class="ticket-icon">
+🎟
+</div>
+
+<div class="ticket-title">
+TICKET
+</div>
+
+<div class="ticket-number">
+005
+</div>
+
+<button>
+VIEW
+</button>
+
+</div>
+
+
+
+
+<div class="ticket available">
+
+<div class="ribbon available-ribbon">
+AVAILABLE
+</div>
+
+<div class="ticket-icon">
+🎟
+</div>
+
+<div class="ticket-title">
+TICKET
+</div>
+
+<div class="ticket-number">
+006
+</div>
+
+<button>
+VIEW
+</button>
+
+</div>
+
+
+
+
+<div class="ticket available">
+
+<div class="ribbon available-ribbon">
+AVAILABLE
+</div>
+
+<div class="ticket-icon">
+🎟
+</div>
+
+<div class="ticket-title">
+TICKET
+</div>
+
+<div class="ticket-number">
+007
+</div>
+
+<button>
+VIEW
+</button>
+
+</div>
+
+
+
+
+<div class="ticket available">
+
+<div class="ribbon available-ribbon">
+AVAILABLE
+</div>
+
+<div class="ticket-icon">
+🎟
+</div>
+
+<div class="ticket-title">
+TICKET
+</div>
+
+<div class="ticket-number">
+008
+</div>
+
+<button>
+VIEW
+</button>
+
+</div>
+
+
+
+
+<div class="ticket available">
+
+<div class="ribbon available-ribbon">
+AVAILABLE
+</div>
+
+<div class="ticket-icon">
+🎟
+</div>
+
+<div class="ticket-title">
+TICKET
+</div>
+
+<div class="ticket-number">
+009
+</div>
+
+<button>
+VIEW
+</button>
+
+</div>
+
+
+
+
+<div class="ticket available">
+
+<div class="ribbon available-ribbon">
+AVAILABLE
+</div>
+
+<div class="ticket-icon">
+🎟
+</div>
+
+<div class="ticket-title">
+TICKET
+</div>
+
+<div class="ticket-number">
+010
+</div>
+
+<button>
+VIEW
+</button>
+
+</div>
+
+
 
 </section>
+
+
+
+
+<footer>
+
+🍀 GOOD LUCK!
+
+</footer>
+
 
 </body>
 </html>
