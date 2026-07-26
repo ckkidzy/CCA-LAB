@@ -158,7 +158,6 @@ reserveBtn.style.display="block";
 modal.classList.add("show");
 
 });
-
 // =====================================
 // CLOSE
 // =====================================
@@ -389,15 +388,25 @@ function loadTicketStatus() {
 
             }
 
-            else {
+            else{
 
-                ribbon.classList.add("sold");
-                ribbon.innerHTML = "SOLD";
+    ribbon.classList.add("sold");
 
-                status.classList.add("status-sold");
-                status.innerHTML = "🔴 Sold";
+    ribbon.innerHTML="SOLD";
 
-            }
+    status.classList.add("status-sold");
+
+    if(data.name && data.name.trim()!==""){
+
+        status.innerHTML=`🔴 Sold<br><small>Booked by ${data.name}</small>`;
+
+    }
+
+    else{
+
+        status.innerHTML="🔴 Sold";
+
+    }
 
         });
 
