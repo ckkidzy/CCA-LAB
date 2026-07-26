@@ -88,6 +88,7 @@ function drawTickets(filter = "") {
 search.addEventListener("keyup", () => {
 
     drawTickets(search.value.trim());
+updateCounters();
 
 });
 
@@ -135,4 +136,27 @@ window.onclick = (e) => {
 
     }
 
+};
+
+function updateCounters(){
+
+const available=tickets.filter(
+t=>t.status==="available"
+).length;
+
+const reserved=tickets.filter(
+t=>t.status==="reserved"
+).length;
+
+const sold=tickets.filter(
+t=>t.status==="sold"
+).length;
+
+document.getElementById("availableCount").innerHTML=available;
+
+document.getElementById("reservedCount").innerHTML=reserved;
+
+document.getElementById("soldCount").innerHTML=sold;
+
+}
 };
