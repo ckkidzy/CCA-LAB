@@ -127,22 +127,35 @@ searchBox.addEventListener("keyup", function () {
 // OPEN POPUP
 // =====================================
 
-document.addEventListener("click", function(e){
+document.addEventListener("click",function(e){
 
-    if(!e.target.classList.contains("viewTicket")) return;
+if(!e.target.classList.contains("viewTicket")) return;
 
-    const card = e.target.closest(".ticket");
+const card=e.target.closest(".ticket");
 
-    selectedTicket = card.dataset.ticket;
+selectedTicket=card.dataset.ticket;
 
-    modalTitle.innerHTML = "Ticket " + selectedTicket;
+modalTitle.innerHTML="Ticket "+selectedTicket;
 
-    modalImage.src =
-    "tickets/ticket_" + selectedTicket + ".jpg";
+modalImage.src="tickets/ticket_"+selectedTicket+".jpg";
 
-    modalStatus.innerHTML="🟢 Available";
+const status=card.querySelector(".ticket-status").textContent;
 
-    modal.classList.add("show");
+modalStatus.innerHTML=status;
+
+if(status.includes("Sold")){
+
+reserveBtn.style.display="none";
+
+}
+
+else{
+
+reserveBtn.style.display="block";
+
+}
+
+modal.classList.add("show");
 
 });
 
