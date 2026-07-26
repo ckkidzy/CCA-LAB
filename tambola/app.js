@@ -388,25 +388,24 @@ function loadTicketStatus() {
 
             }
 
-            else{
+            else {
 
-    ribbon.classList.add("sold");
+                ribbon.classList.add("sold");
+                ribbon.innerHTML = "SOLD";
 
-    ribbon.innerHTML="SOLD";
+                status.classList.add("status-sold");
 
-    status.classList.add("status-sold");
+                if (data.name && data.name.trim() !== "") {
 
-    if(data.name && data.name.trim()!==""){
+                    status.innerHTML = `🔴 Sold<br><small>Booked by ${data.name}</small>`;
 
-        status.innerHTML=`🔴 Sold<br><small>Booked by ${data.name}</small>`;
+                } else {
 
-    }
+                    status.innerHTML = "🔴 Sold";
 
-    else{
+                }
 
-        status.innerHTML="🔴 Sold";
-
-    }
+            }
 
         });
 
