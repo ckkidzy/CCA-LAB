@@ -2,66 +2,101 @@ import { db } from "./firebase.js";
 
 import {
 collection,
-getDocs
+getDocs,
+doc,
+updateDoc
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
-const adminGrid = document.getElementById("adminGrid");
+const ticketGrid = document.getElementById("ticketGrid");
+const search = document.getElementById("search");
 
-async function loadAdmin() {
+let tickets = [];
 
-    adminGrid.innerHTML = "";
+loadTickets();
 
-    const snapshot = await getDocs(collection(db, "tickets"));
+async function loadTickets(){
 
-    snapshot.forEach((docSnap)=>{
+    const snapshot = await getDocs(collection(db,"tickets"));
 
-        const id = docSnap.id;
+    tickets=[];
 
-        const data = docSnap.data();
+    snapshot.forEach(docSnap=>{
 
-        let color="green";
-        let emoji="🟢";
+        tickets.push({
 
-        if(data.status==="reserved"){
+            id:docSnap.id,
+            ...docSnap.data()
 
-            color="orange";
-            emoji="🟠";
+        });
 
-        }
+    });
 
-        if(data.status==="sold"){
+    tickets.sort((a,b)=>Number(a.id)-Number(b.id));
 
-            color="red";
-            emoji="🔴";
+    drawTickets();
 
-        }
+}
 
-        adminGrid.innerHTML += `
+function drawTickets(filter=""){
 
-        <div class="admin-card">
+    ticketGrid.innerHTML="";
 
-            <h2>${id}</h2>
+    tickets.forEach(ticket=>{
 
-            <p style="color:${color};font-weight:bold;">
+        if(filter && !ticket.id.includes(filter)) return;
 
-            ${emoji} ${data.status.toUpperCase()}
+        const div=document.createElement("div");
 
-            </p>
+        div.className=`adminTicket ${ticket.status}`;
 
-            <button class="changeStatus"
+        div.innerHTML=ticket.id;
 
-            data-ticket="${id}">
+        div.onclick=()=>changeStatus(ticket);
 
-            Change Status
-
-            </button>
-
-        </div>
-
-        `;
+        ticketGrid.appendChild(div);
 
     });
 
 }
 
-loadAdmin();
+search.addEventListener("keyup",function(){
+
+    drawTickets(this.value.trim());
+
+});
+
+async function changeStatus(ticket){
+
+    let status=prompt(
+
+`Ticket ${ticket.id}
+
+1 = available
+2 = reserved
+3 = sold`
+
+);
+
+    if(status===null) return;
+
+    let newStatus="available";
+
+    if(status==="2") newStatus="reserved";
+
+    if(status==="3") newStatus="sold";
+
+    await updateDoc(
+
+        doc(db,"tickets",ticket.id),
+
+        {
+
+            status:newStatus
+
+        }
+
+    );
+
+    loadTickets();
+
+}
