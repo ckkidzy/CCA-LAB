@@ -380,13 +380,22 @@ function loadTicketStatus() {
 
             else if (data.status === "reserved") {
 
-                ribbon.classList.add("reserved");
-                ribbon.innerHTML = "RESERVED";
+    ribbon.classList.add("reserved");
+    ribbon.innerHTML = "RESERVED";
 
-                status.classList.add("status-reserved");
-                status.innerHTML = "🟠 Reserved";
+    status.classList.add("status-reserved");
 
-            }
+    if (data.name && data.name.trim() !== "") {
+
+        status.innerHTML = `🟠 Reserved<br><small>Held for ${data.name}</small>`;
+
+    } else {
+
+        status.innerHTML = "🟠 Reserved";
+
+    }
+
+}
 
             else {
 
