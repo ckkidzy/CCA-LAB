@@ -8,7 +8,8 @@ import {
 doc,
 setDoc,
 getDocs,
-collection
+collection,
+onSnapshot
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 const startTicket = 109;
@@ -336,66 +337,62 @@ async function initializeTickets() {
 
 // Run ONLY ONCE
 
-async function loadTicketStatus() {
+function loadTicketStatus() {
 
-    console.log("Loading ticket status...");
+    onSnapshot(collection(db, "tickets"), (snapshot) => {
 
-    const snapshot = await getDocs(collection(db, "tickets"));
+        snapshot.forEach((docSnap) => {
 
-    console.log("Documents found:", snapshot.size);
+            const id = docSnap.id;
+            const data = docSnap.data();
 
-snapshot.forEach((docSnap) => {
+            const card = document.querySelector(`[data-ticket="${id}"]`);
 
-const id = docSnap.id;
-const data = docSnap.data();
+            if (!card) return;
 
-console.log(window.document);
-console.log(typeof window.document.querySelector);
+            const ribbon = card.querySelector(".ribbon");
+            const status = card.querySelector(".ticket-status");
 
-const card = window.document.querySelector(`[data-ticket="${id}"]`);
+            ribbon.classList.remove("available", "reserved", "sold");
+            status.classList.remove("status-available", "status-reserved", "status-sold");
 
-        if (!card) return;
+            if (data.status === "available") {
 
-        const ribbon = card.querySelector(".ribbon");
-        const status = card.querySelector(".ticket-status");
+                ribbon.classList.add("available");
+                ribbon.innerHTML = "AVAILABLE";
 
-        ribbon.classList.remove("available", "reserved", "sold");
-        status.classList.remove("status-available", "status-reserved", "status-sold");
+                status.classList.add("status-available");
+                status.innerHTML = "🟢 Available";
 
-        if (data.status === "available") {
+            }
 
-            ribbon.classList.add("available");
-            ribbon.innerHTML = "AVAILABLE";
+            else if (data.status === "reserved") {
 
-            status.classList.add("status-available");
-            status.innerHTML = "🟢 Available";
+                ribbon.classList.add("reserved");
+                ribbon.innerHTML = "RESERVED";
 
-        }
+                status.classList.add("status-reserved");
+                status.innerHTML = "🟠 Reserved";
 
-        else if (data.status === "reserved") {
+            }
 
-            ribbon.classList.add("reserved");
-            ribbon.innerHTML = "RESERVED";
+            else {
 
-            status.classList.add("status-reserved");
-            status.innerHTML = "🟠 Reserved";
+                ribbon.classList.add("sold");
+                ribbon.innerHTML = "SOLD";
 
-        }
+                status.classList.add("status-sold");
+                status.innerHTML = "🔴 Sold";
 
-        else {
+            }
 
-            ribbon.classList.add("sold");
-            ribbon.innerHTML = "SOLD";
+        });
 
-            status.classList.add("status-sold");
-            status.innerHTML = "🔴 Sold";
-
-        }
+        updateCounters();
 
     });
 
 }
-
 // =====================================
 // CONSOLE
 // =====================================
