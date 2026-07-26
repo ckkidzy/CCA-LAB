@@ -159,4 +159,3 @@ document.getElementById("reservedCount").innerHTML=reserved;
 document.getElementById("soldCount").innerHTML=sold;
 
 }
-};
