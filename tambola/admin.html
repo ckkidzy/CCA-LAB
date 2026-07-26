@@ -432,6 +432,33 @@ font-size:16px;
 
 }
 
+.statusBox input{
+
+width:100%;
+
+padding:12px;
+
+margin-bottom:10px;
+
+border-radius:10px;
+
+border:1px solid #ddd;
+
+font-size:15px;
+
+outline:none;
+
+transition:.25s;
+
+}
+
+.statusBox input:focus{
+
+border-color:#2563eb;
+
+box-shadow:0 0 8px rgba(37,99,235,.25);
+
+}
 </style>
 
 </head>
@@ -521,6 +548,16 @@ id="statusModal">
 Ticket
 
 </h2>
+
+<input
+type="text"
+id="buyerName"
+placeholder="Customer Name">
+
+<input
+type="text"
+id="buyerPhone"
+placeholder="Phone Number">
 
 <button
 class="statusBtn availableBtn"
