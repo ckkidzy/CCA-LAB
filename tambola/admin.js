@@ -17,6 +17,8 @@ const availableBtn=document.getElementById("availableBtn");
 const reservedBtn=document.getElementById("reservedBtn");
 const soldBtn=document.getElementById("soldBtn");
 const closeStatus=document.getElementById("closeStatus");
+const buyerName=document.getElementById("buyerName");
+const buyerPhone=document.getElementById("buyerPhone");
 
 const availableCount=document.getElementById("availableCount");
 const reservedCount=document.getElementById("reservedCount");
@@ -132,6 +134,10 @@ selectedTicket=ticket.id;
 
 ticketTitle.innerHTML="🎟 Ticket "+ticket.id;
 
+buyerName.value=ticket.name || "";
+
+buyerPhone.value=ticket.phone || "";
+
 modal.classList.add("show");
 
 };
@@ -198,12 +204,15 @@ doc(db,"tickets",selectedTicket),
 
 {
 
-status:status
+status:status,
+
+name:buyerName.value.trim(),
+
+phone:buyerPhone.value.trim()
 
 }
 
 );
-
 modal.classList.remove("show");
 
 }
