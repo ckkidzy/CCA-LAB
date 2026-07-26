@@ -4,54 +4,76 @@ import {
 collection,
 getDocs,
 doc,
-updateDoc
+updateDoc,
+onSnapshot
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 const ticketGrid = document.getElementById("ticketGrid");
 const search = document.getElementById("search");
 
+const modal = document.getElementById("statusModal");
+const ticketTitle = document.getElementById("ticketTitle");
+
+const availableBtn = document.getElementById("availableBtn");
+const reservedBtn = document.getElementById("reservedBtn");
+const soldBtn = document.getElementById("soldBtn");
+const closeStatus = document.getElementById("closeStatus");
+
 let tickets = [];
+let selectedTicket = "";
 
-loadTickets();
+// ===========================
+// REALTIME LISTENER
+// ===========================
 
-async function loadTickets(){
+onSnapshot(collection(db, "tickets"), (snapshot) => {
 
-    const snapshot = await getDocs(collection(db,"tickets"));
+    tickets = [];
 
-    tickets=[];
-
-    snapshot.forEach(docSnap=>{
+    snapshot.forEach((docSnap) => {
 
         tickets.push({
 
-            id:docSnap.id,
+            id: docSnap.id,
             ...docSnap.data()
 
         });
 
     });
 
-    tickets.sort((a,b)=>Number(a.id)-Number(b.id));
+    tickets.sort((a, b) => Number(a.id) - Number(b.id));
 
-    drawTickets();
+    drawTickets(search.value.trim());
 
-}
+});
 
-function drawTickets(filter=""){
+// ===========================
+// DRAW TICKETS
+// ===========================
 
-    ticketGrid.innerHTML="";
+function drawTickets(filter = "") {
 
-    tickets.forEach(ticket=>{
+    ticketGrid.innerHTML = "";
 
-        if(filter && !ticket.id.includes(filter)) return;
+    tickets.forEach(ticket => {
 
-        const div=document.createElement("div");
+        if (filter && !ticket.id.includes(filter)) return;
 
-        div.className=`adminTicket ${ticket.status}`;
+        const div = document.createElement("div");
 
-        div.innerHTML=ticket.id;
+        div.className = `adminTicket ${ticket.status}`;
 
-        div.onclick=()=>changeStatus(ticket);
+        div.innerHTML = ticket.id;
+
+        div.onclick = () => {
+
+            selectedTicket = ticket.id;
+
+            ticketTitle.innerHTML = "🎟 Ticket " + ticket.id;
+
+            modal.classList.add("show");
+
+        };
 
         ticketGrid.appendChild(div);
 
@@ -59,44 +81,58 @@ function drawTickets(filter=""){
 
 }
 
-search.addEventListener("keyup",function(){
+// ===========================
+// SEARCH
+// ===========================
 
-    drawTickets(this.value.trim());
+search.addEventListener("keyup", () => {
+
+    drawTickets(search.value.trim());
 
 });
 
-async function changeStatus(ticket){
+// ===========================
+// CHANGE STATUS
+// ===========================
 
-    let status=prompt(
+availableBtn.onclick = () => changeStatus("available");
+reservedBtn.onclick = () => changeStatus("reserved");
+soldBtn.onclick = () => changeStatus("sold");
 
-`Ticket ${ticket.id}
-
-1 = available
-2 = reserved
-3 = sold`
-
-);
-
-    if(status===null) return;
-
-    let newStatus="available";
-
-    if(status==="2") newStatus="reserved";
-
-    if(status==="3") newStatus="sold";
+async function changeStatus(status) {
 
     await updateDoc(
 
-        doc(db,"tickets",ticket.id),
+        doc(db, "tickets", selectedTicket),
 
         {
 
-            status:newStatus
+            status: status
 
         }
 
     );
 
-    loadTickets();
+    modal.classList.remove("show");
 
 }
+
+// ===========================
+// CLOSE POPUP
+// ===========================
+
+closeStatus.onclick = () => {
+
+    modal.classList.remove("show");
+
+};
+
+window.onclick = (e) => {
+
+    if (e.target === modal) {
+
+        modal.classList.remove("show");
+
+    }
+
+};

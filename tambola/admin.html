@@ -137,6 +137,149 @@ background:#ef4444;
 
 }
 
+/* =======================
+STATUS POPUP
+======================= */
+
+.statusModal{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.55);
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999;
+
+}
+
+.statusModal.show{
+
+display:flex;
+
+}
+
+.statusBox{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+width:320px;
+
+text-align:center;
+
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+animation:popup .25s ease;
+
+}
+
+@keyframes popup{
+
+from{
+
+transform:scale(.8);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+.statusBtn{
+
+width:100%;
+
+padding:15px;
+
+margin:10px 0;
+
+font-size:18px;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+transition:.25s;
+
+}
+
+.statusBtn:hover{
+
+transform:scale(1.03);
+
+}
+
+.availableBtn{
+
+background:#22c55e;
+
+color:white;
+
+}
+
+.reservedBtn{
+
+background:#f59e0b;
+
+color:white;
+
+}
+
+.soldBtn{
+
+background:#ef4444;
+
+color:white;
+
+}
+
+.closeStatus{
+
+width:100%;
+
+padding:14px;
+
+margin-top:15px;
+
+background:#ddd;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-size:16px;
+
+}
 </style>
 
 </head>
@@ -164,6 +307,34 @@ id="ticketGrid">
 </div>
 
 <script type="module" src="admin.js"></script>
+
+<!-- STATUS MODAL -->
+
+<div id="statusModal" class="statusModal">
+
+<div class="statusBox">
+
+<h2 id="ticketTitle">Ticket</h2>
+
+<button class="statusBtn availableBtn" id="availableBtn">
+🟢 Available
+</button>
+
+<button class="statusBtn reservedBtn" id="reservedBtn">
+🟠 Reserved
+</button>
+
+<button class="statusBtn soldBtn" id="soldBtn">
+🔴 Sold
+</button>
+
+<button class="closeStatus" id="closeStatus">
+Cancel
+</button>
+
+</div>
+
+</div>
 
 </body>
 
