@@ -73,61 +73,73 @@ margin:25px auto;
 
 /* ---------- DASHBOARD ---------- */
 
+/* ================= DASHBOARD ================= */
+
 .dashboard{
 
 display:flex;
 
-gap:18px;
+justify-content:center;
 
-margin-bottom:25px;
+gap:15px;
+
+margin:18px auto 22px;
 
 flex-wrap:wrap;
-
-justify-content:center;
 
 }
 
 .stat{
 
-flex:1;
+width:135px;
 
-min-width:180px;
+height:82px;
 
-background:white;
+background:#fff;
 
-border-radius:22px;
+border-radius:18px;
 
-padding:18px;
+display:flex;
 
-text-align:center;
+flex-direction:column;
 
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+align-items:center;
 
-transition:.3s;
+justify-content:center;
+
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+transition:.25s;
+
+cursor:default;
 
 }
 
 .stat:hover{
 
-transform:translateY(-5px);
+transform:translateY(-4px);
+
+box-shadow:0 14px 30px rgba(0,0,0,.12);
 
 }
 
 .emoji{
 
-font-size:30px;
+font-size:18px;
 
-margin-bottom:8px;
+margin-bottom:3px;
 
 }
 
 .stat h2{
 
-font-size:38px;
+font-size:26px;
 
 font-weight:800;
 
-margin-bottom:5px;
+line-height:1;
+
+margin:2px 0;
 
 color:#222;
 
@@ -135,29 +147,31 @@ color:#222;
 
 .stat p{
 
-font-size:15px;
+font-size:12px;
 
-font-weight:700;
+font-weight:600;
 
-color:#666;
+color:#777;
+
+margin-top:2px;
 
 }
 
 .availableCard{
 
-border-top:6px solid #22c55e;
+border-top:4px solid #22c55e;
 
 }
 
 .reservedCard{
 
-border-top:6px solid #f59e0b;
+border-top:4px solid #f59e0b;
 
 }
 
 .soldCard{
 
-border-top:6px solid #ef4444;
+border-top:4px solid #ef4444;
 
 }
 
@@ -441,7 +455,7 @@ font-size:16px;
 
 <div class="emoji">🟢</div>
 
-<h2 id="availableCount">143</h2>
+<h2 id="availableCount">0</h2>
 
 <p>Available</p>
 
@@ -451,7 +465,7 @@ font-size:16px;
 
 <div class="emoji">🟠</div>
 
-<h2 id="reservedCount">3</h2>
+<h2 id="reservedCount">0</h2>
 
 <p>Reserved</p>
 
@@ -461,7 +475,7 @@ font-size:16px;
 
 <div class="emoji">🔴</div>
 
-<h2 id="soldCount">4</h2>
+<h2 id="soldCount">0</h2>
 
 <p>Sold</p>
 
