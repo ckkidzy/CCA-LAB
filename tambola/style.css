@@ -1040,3 +1040,88 @@ Ticket Image (Updated Compact Version)
   padding: 8px 12px; /* REDUCED button height from 14px to 8px */
   font-size: 13px;
 }
+/*==========================
+ADMIN
+==========================*/
+
+.admin-page{
+
+width:95%;
+
+max-width:1300px;
+
+margin:auto;
+
+padding:30px;
+
+}
+
+.admin-page h1{
+
+text-align:center;
+
+font-size:42px;
+
+margin-bottom:10px;
+
+}
+
+.admin-page p{
+
+text-align:center;
+
+margin-bottom:35px;
+
+opacity:.8;
+
+}
+
+.admin-card{
+
+background:white;
+
+border-radius:22px;
+
+padding:18px;
+
+text-align:center;
+
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+transition:.3s;
+
+}
+
+.admin-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.admin-card h2{
+
+font-size:30px;
+
+margin-bottom:10px;
+
+}
+
+.admin-card button{
+
+margin-top:12px;
+
+padding:10px 18px;
+
+border:none;
+
+border-radius:30px;
+
+background:#3b82f6;
+
+color:white;
+
+cursor:pointer;
+
+font-weight:bold;
+
+}
