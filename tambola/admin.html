@@ -1,33 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>DBSTI Tambola Admin</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 
-<script type="module" src="admin.js"></script>
+<style>
+
+body{
+
+background:#f5f7fb;
+
+font-family:Arial,sans-serif;
+
+}
+
+.adminHeader{
+
+background:#1f2937;
+
+color:white;
+
+padding:20px;
+
+text-align:center;
+
+}
+
+.adminHeader h1{
+
+margin:0;
+
+font-size:32px;
+
+}
+
+.topBar{
+
+width:95%;
+
+max-width:1200px;
+
+margin:25px auto;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+}
+
+#search{
+
+padding:12px 18px;
+
+border-radius:30px;
+
+border:none;
+
+width:280px;
+
+font-size:16px;
+
+}
+
+.ticketGrid{
+
+width:95%;
+
+max-width:1200px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fill,minmax(70px,1fr));
+
+gap:12px;
+
+padding-bottom:50px;
+
+}
+
+.adminTicket{
+
+height:70px;
+
+border-radius:15px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-weight:bold;
+
+cursor:pointer;
+
+color:white;
+
+transition:.25s;
+
+}
+
+.adminTicket:hover{
+
+transform:scale(1.08);
+
+}
+
+.available{
+
+background:#22c55e;
+
+}
+
+.reserved{
+
+background:#f59e0b;
+
+}
+
+.sold{
+
+background:#ef4444;
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<div class="admin-page">
+<div class="adminHeader">
 
-<h1>🎟 Tambola Admin Panel</h1>
-
-<p>Manage Ticket Status</p>
-
-<div id="adminGrid" class="ticket-grid">
+<h1>🎟 DBSTI Tambola Admin</h1>
 
 </div>
 
+<div class="topBar">
+
+<input
+id="search"
+placeholder="Search Ticket">
+
 </div>
+
+<div
+class="ticketGrid"
+id="ticketGrid">
+
+</div>
+
+<script type="module" src="js/admin.js"></script>
 
 </body>
 
