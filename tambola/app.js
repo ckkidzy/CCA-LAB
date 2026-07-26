@@ -341,13 +341,15 @@ async function loadTicketStatus() {
 
     console.log("Documents found:", snapshot.size);
 
-    snapshot.forEach((document) => {
+snapshot.forEach((docSnap) => {
 
-        const id = document.id;
+const id = docSnap.id;
+const data = docSnap.data();
 
-        const data = document.data();
+console.log(window.document);
+console.log(typeof window.document.querySelector);
 
-        const card = document.querySelector(`[data-ticket="${id}"]`);
+const card = window.document.querySelector(`[data-ticket="${id}"]`);
 
         if (!card) return;
 
