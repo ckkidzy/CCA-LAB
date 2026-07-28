@@ -47,7 +47,12 @@ if(data.name && data.ticket){
 
     ticket.innerHTML = "🎟️" + data.ticket;
 
-}else{
+const card = name.closest(".winnerCard");
+
+    card.classList.add("revealed");
+
+}
+else{
 
     name.classList.add("waiting");
 
@@ -55,13 +60,16 @@ if(data.name && data.ticket){
 
     ticket.innerHTML = "—";
 
+const card = name.closest(".winnerCard");
+
+    card.classList.remove("revealed");
 }
 
 const card=name.closest(".winnerCard");
 
 card.classList.add("revealed");
 
-    setTimeout(()=>{
+setTimeout(()=>{
 
 card.classList.remove("revealed");
 
