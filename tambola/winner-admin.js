@@ -8,6 +8,14 @@ updateDoc
 
 const winnerGrid=document.getElementById("winnerGrid");
 
+const modal=document.getElementById("verifyModal");
+const verifyPrize=document.getElementById("verifyPrize");
+const verifyName=document.getElementById("verifyName");
+const verifyTicket=document.getElementById("verifyTicket");
+
+const confirmBtn=document.getElementById("confirmWinner");
+const cancelBtn=document.getElementById("cancelWinner");
+
 const prizes=[
 
 {id:"early5",title:"⭐ Early 5"},
@@ -21,6 +29,10 @@ const prizes=[
 {id:"fullHouse2",title:"👑👑 2nd Full House"}
 
 ];
+
+let currentPrize="";
+let currentTicket="";
+let currentData=null;
 
 drawCards();
 
@@ -69,7 +81,7 @@ const ticket=document.getElementById(prize).value.trim();
 
 if(ticket===""){
 
-alert("Enter ticket number");
+alert("Enter Ticket Number");
 
 return;
 
@@ -95,34 +107,57 @@ return;
 
 }
 
-const ok=confirm(
+currentPrize=prize;
+currentTicket=ticket;
+currentData=data;
 
-`Winner
+const prizeTitle=prizes.find(p=>p.id===prize).title;
 
-${data.name}
+verifyPrize.innerHTML=prizeTitle;
+verifyName.innerHTML="👤 "+data.name;
+verifyTicket.innerHTML="🎟 Ticket "+ticket;
 
-Ticket ${ticket}
+modal.classList.add("show");
 
-Confirm?`
+});
+
+confirmBtn.onclick=async()=>{
+
+await updateDoc(
+
+doc(db,"winners",currentPrize),
+
+{
+
+name:currentData.name,
+ticket:currentTicket,
+phone:currentData.phone||"",
+time:new Date().toLocaleString()
+
+}
 
 );
 
-if(!ok) return;
+document.getElementById(currentPrize).value="";
 
-await updateDoc(doc(db,"winners",prize),{
+modal.classList.remove("show");
 
-name:data.name,
+alert("🏆 Winner Saved!");
 
-ticket:ticket,
+};
 
-phone:data.phone,
+cancelBtn.onclick=()=>{
 
-time:new Date().toLocaleString()
+modal.classList.remove("show");
 
-});
+};
 
-alert("Winner Saved!");
+window.onclick=(e)=>{
 
-document.getElementById(prize).value="";
+if(e.target===modal){
 
-});
+modal.classList.remove("show");
+
+}
+
+};
