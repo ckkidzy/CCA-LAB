@@ -39,11 +39,23 @@ const ticket=document.getElementById(prize+"Ticket");
 
 if(!name || !ticket) return;
 
-name.classList.remove("waiting");
+if(data.name && data.ticket){
 
-name.innerHTML=data.name || "Winner";
+    name.classList.remove("waiting");
 
-ticket.innerHTML="🎟 Ticket "+data.ticket;
+    name.innerHTML = data.name;
+
+    ticket.innerHTML = "🎟 Ticket " + data.ticket;
+
+}else{
+
+    name.classList.add("waiting");
+
+    name.innerHTML = "⏳ WAITING FOR WINNER";
+
+    ticket.innerHTML = "—";
+
+}
 
 const card=name.closest(".winnerCard");
 
