@@ -348,3 +348,141 @@ opacity:1;
 }
 
 }
+/* Winner breathing glow */
+
+.winnerCard.revealed{
+
+animation:
+
+reveal .7s ease,
+
+winnerGlow 2.8s ease-in-out infinite;
+
+}
+
+@keyframes winnerGlow{
+
+0%{
+
+box-shadow:
+0 0 10px rgba(255,215,0,.3);
+
+}
+
+50%{
+
+box-shadow:
+0 0 35px gold,
+0 0 70px rgba(255,215,0,.45);
+
+}
+
+100%{
+
+box-shadow:
+0 0 10px rgba(255,215,0,.3);
+
+}
+
+}
+.winnerName{
+
+animation:nameFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes nameFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-3px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+.winnerCard::after{
+
+content:"";
+
+position:absolute;
+
+inset:-2px;
+
+border-radius:22px;
+
+padding:2px;
+
+background:
+
+linear-gradient(
+45deg,
+transparent,
+gold,
+transparent);
+
+opacity:.15;
+
+animation:borderMove 5s linear infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes borderMove{
+
+0%{
+
+transform:rotate(0deg);
+
+}
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+h1{
+
+animation:
+
+goldFlow 5s linear infinite,
+
+titleGlow 2s ease-in-out infinite;
+
+}
+
+@keyframes titleGlow{
+
+0%{
+
+filter:drop-shadow(0 0 5px gold);
+
+}
+
+50%{
+
+filter:drop-shadow(0 0 18px gold);
+
+}
+
+100%{
+
+filter:drop-shadow(0 0 5px gold);
+
+}
+
+}
