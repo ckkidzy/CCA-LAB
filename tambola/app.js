@@ -13,7 +13,7 @@ onSnapshot
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 const startTicket = 109;
-const totalTickets = 150;
+const totalTickets = 180;
 const endTicket = startTicket + totalTickets -1;
 
 const ticketGrid = document.getElementById("ticketGrid");
@@ -28,6 +28,27 @@ const reserveBtn = document.getElementById("reserveBtn");
 const closeBtn = document.getElementById("closeModal");
 
 let selectedTicket = "";
+//--------------------------
+//NEW TICKETS ONCE
+//--------------------------
+async function addNewTickets() {
+
+    for (let i = 259; i <= 288; i++) {
+
+        await setDoc(doc(db, "tickets", String(i)), {
+
+            status: "available",
+            name: "",
+            phone: "",
+            time: ""
+
+        });
+
+    }
+
+    alert("30 new tickets added!");
+
+}
 
 // =====================================
 // CREATE TICKETS
@@ -423,6 +444,7 @@ function loadTicketStatus() {
     });
 
 }
+addNewTickets();
 // =====================================
 // CONSOLE
 // =====================================
