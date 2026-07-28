@@ -45,7 +45,7 @@ if(data.name && data.ticket){
 
     name.innerHTML = data.name;
 
-    ticket.innerHTML = "🎟 Ticket " + data.ticket;
+    ticket.innerHTML = "🎟 🎫" + data.ticket;
 
 }else{
 
