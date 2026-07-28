@@ -387,23 +387,17 @@ transform:translateY(0);
 
 .ticketNo{
 
-padding:10px 28px;
+font-size:17px;
+
+font-weight:700;
+
+padding:8px 18px;
 
 border-radius:40px;
 
-font-size:24px;
-
-font-weight:900;
-
 background:rgba(255,255,255,.12);
 
-border:1px solid rgba(255,255,255,.18);
-
-color:white;
-
-box-shadow:none;
-
-transition:.4s;
+border:1px solid rgba(255,255,255,.15);
 
 }
 /* ==========================================
