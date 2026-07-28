@@ -61,11 +61,6 @@ const card=name.closest(".winnerCard");
 
 card.classList.add("revealed");
 
-setTimeout(()=>{
-
-card.classList.remove("revealed");
-
-},1200);
 
 }
 
