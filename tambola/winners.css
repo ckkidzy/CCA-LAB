@@ -539,27 +539,6 @@ box-shadow:
 }
 
 }
-/* Ticket turns gold ONLY after winner is declared */
-
-.winnerCard.revealed .ticketNo{
-
-background:linear-gradient(
-90deg,
-#FFD700,
-#FFF2A6,
-#FFD700);
-
-color:#222;
-
-border:none;
-
-box-shadow:
-
-0 0 10px gold,
-
-0 0 22px rgba(255,215,0,.55);
-
-}
 /* ==========================================
    GOLD BORDER ROTATION
 ========================================== */
@@ -652,14 +631,22 @@ font-size:24px;
 
 font-weight:900;
 
-background:rgba(255,255,255,.12);
+background:linear-gradient(
+90deg,
+#FFD700,
+#FFF2A6,
+#FFD700);
 
-border:1px solid rgba(255,255,255,.18);
+color:#222;
 
-color:white;
+border:none;
 
-box-shadow:none;
+box-shadow:
 
-transition:.4s;
+0 0 10px gold,
+
+0 0 22px rgba(255,215,0,.6);
+
+transition:.3s;
 
 }
