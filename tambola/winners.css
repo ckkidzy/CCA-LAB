@@ -1,52 +1,107 @@
+/* ==========================================
+   DBSTI TAMBOLA 2026
+   CHAMPIONSHIP EDITION
+========================================== */
+
 *{
-
 margin:0;
-
 padding:0;
-
 box-sizing:border-box;
-
-font-family:"Segoe UI",sans-serif;
-
 }
 
 body{
 
-background:linear-gradient(135deg,#07111f,#0d1b2a,#132238);
+font-family:"Segoe UI",sans-serif;
+
+overflow:hidden;
 
 min-height:100vh;
 
-overflow-x:hidden;
+background:linear-gradient(
+135deg,
+#020617,
+#071b31,
+#0f2d56,
+#163d73,
+#071b31,
+#020617);
+
+background-size:500% 500%;
+
+animation:bgMove 18s ease infinite;
 
 color:white;
 
 }
 
-.container{
+/* Animated Background */
 
-width:92%;
+@keyframes bgMove{
 
-max-width:1400px;
+0%{background-position:0% 50%;}
 
-margin:auto;
+50%{background-position:100% 50%;}
 
-padding:35px 0;
+100%{background-position:0% 50%;}
 
 }
 
+/* Container */
+
+.container{
+
+width:96%;
+
+height:100vh;
+
+margin:auto;
+
+padding:25px;
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+/* Title */
+
 h1{
+
+font-size:56px;
 
 text-align:center;
 
-font-size:52px;
+font-weight:900;
 
-color:#ffd700;
+letter-spacing:3px;
 
-text-shadow:0 0 20px rgba(255,215,0,.6);
+background:linear-gradient(
+90deg,
+#fff9c4,
+#ffd54f,
+#fff176,
+#ffca28,
+#fff9c4);
 
-margin-bottom:8px;
+background-size:300%;
 
-letter-spacing:1px;
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+animation:goldFlow 5s linear infinite;
+
+text-shadow:
+0 0 18px rgba(255,215,0,.5);
+
+}
+
+@keyframes goldFlow{
+
+0%{background-position:0%;}
+
+100%{background-position:300%;}
 
 }
 
@@ -54,47 +109,71 @@ letter-spacing:1px;
 
 text-align:center;
 
-font-size:18px;
+margin-top:8px;
 
-opacity:.85;
+margin-bottom:25px;
 
-margin-bottom:35px;
+font-size:22px;
+
+letter-spacing:2px;
+
+opacity:.9;
 
 }
 
-/* ================= WINNER CARD ================= */
+/* Winner Grid */
+
+.winnerGrid{
+
+flex:1;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+grid-template-rows:repeat(3,1fr);
+
+gap:18px;
+
+}
+
+/* Card */
 
 .winnerCard{
-
-background:rgba(255,255,255,.08);
-
-backdrop-filter:blur(12px);
-
-border:1px solid rgba(255,255,255,.15);
-
-border-radius:22px;
-
-padding:25px;
-
-margin-bottom:22px;
-
-box-shadow:0 10px 35px rgba(0,0,0,.35);
-
-transition:.35s;
 
 position:relative;
 
 overflow:hidden;
 
+border-radius:24px;
+
+padding:20px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:
+
+0 8px 30px rgba(0,0,0,.35),
+
+inset 0 0 0 1px rgba(255,255,255,.08);
+
+transition:.4s;
+
 }
 
-.winnerCard:hover{
-
-transform:translateY(-5px);
-
-box-shadow:0 18px 45px rgba(0,0,0,.45);
-
-}
+/* Moving Shine */
 
 .winnerCard::before{
 
@@ -102,19 +181,29 @@ content:"";
 
 position:absolute;
 
-left:-120px;
+left:-150%;
 
 top:0;
 
-width:90px;
+width:70%;
 
 height:100%;
 
-background:rgba(255,255,255,.15);
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.25),
+
+transparent);
 
 transform:skewX(-25deg);
 
-animation:shine 6s infinite;
+animation:shine 5s infinite;
 
 }
 
@@ -122,97 +211,109 @@ animation:shine 6s infinite;
 
 0%{
 
-left:-120px;
+left:-150%;
 
 }
 
 100%{
 
-left:150%;
+left:170%;
 
 }
 
 }
+
+/* Prize Name */
 
 .winnerCard h2{
 
-font-size:30px;
+font-size:28px;
 
 margin-bottom:18px;
 
-color:#ffd700;
+color:#FFD54F;
 
-letter-spacing:1px;
+text-shadow:0 0 10px rgba(255,215,0,.45);
 
 }
 
-/* ================= NAME ================= */
+/* Winner Name */
 
 .winnerName{
 
-font-size:42px;
+font-size:34px;
 
 font-weight:800;
 
-color:white;
+letter-spacing:1px;
+
+margin-bottom:14px;
 
 text-align:center;
 
-margin:18px 0;
-
-min-height:55px;
+color:white;
 
 }
 
-/* ================= TICKET ================= */
+/* Ticket */
 
 .ticketNo{
 
-text-align:center;
+padding:10px 28px;
+
+border-radius:50px;
 
 font-size:22px;
 
 font-weight:bold;
 
-color:#9bd3ff;
+background:rgba(255,255,255,.15);
+
+border:1px solid rgba(255,255,255,.15);
 
 }
 
-/* ================= WAITING ================= */
+/* Waiting Animation */
 
 .waiting{
 
-opacity:.55;
+font-size:26px;
 
-font-style:italic;
+font-weight:bold;
 
-}
+background:
 
-/* ================= RESPONSIVE ================= */
+linear-gradient(
 
-@media(max-width:768px){
+90deg,
 
-h1{
+#777,
 
-font-size:34px;
+#fff,
 
-}
+#777);
 
-.winnerCard h2{
+background-size:300%;
 
-font-size:22px;
+-webkit-background-clip:text;
 
-}
+-webkit-text-fill-color:transparent;
 
-.winnerName{
-
-font-size:28px;
+animation:waiting 2.5s linear infinite;
 
 }
 
-.ticketNo{
+@keyframes waiting{
 
-font-size:18px;
+0%{
+
+background-position:-300%;
+
+}
+
+100%{
+
+background-position:300%;
 
 }
 
