@@ -165,8 +165,7 @@ animation:
 
 goldFlow 5s linear infinite,
 
-titleGlow 2s ease-in-out infinite;
-
+filter:drop-shadow(0 0 2px rgba(255,215,0,.35));
 }
 
 @keyframes goldFlow{
@@ -185,27 +184,6 @@ background-position:300%;
 
 }
 
-@keyframes titleGlow{
-
-0%{
-
-filter:drop-shadow(0 0 4px gold);
-
-}
-
-50%{
-
-filter:drop-shadow(0 0 16px gold);
-
-}
-
-100%{
-
-filter:drop-shadow(0 0 4px gold);
-
-}
-
-}
 
 /* ==========================================
    Subtitle
@@ -351,11 +329,7 @@ margin-bottom:12px;
 
 color:#FFD54F;
 
-text-shadow:
-
-0 0 8px gold,
-
-0 0 18px rgba(255,215,0,.45);
+text-shadow:none;
 
 }
 
@@ -385,11 +359,7 @@ margin-bottom:12px;
 
 color:#ffffff;
 
-text-shadow:
-
-0 0 8px #ffffff,
-
-0 0 18px rgba(255,255,255,.6);
+text-shadow:none;
 
 animation:nameFloat 4s ease-in-out infinite;
 
