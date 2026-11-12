@@ -369,7 +369,6 @@ async function initializeTickets() {
 }
 
 // Run ONLY ONCE
-initializeTickets();
 
 function loadTicketStatus() {
 
