@@ -12,8 +12,8 @@ collection,
 onSnapshot
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
-const startTicket = 109;
-const totalTickets = 180;
+const startTicket = 289;
+const totalTickets = 216;
 const endTicket = startTicket + totalTickets -1;
 
 const ticketGrid = document.getElementById("ticketGrid");
@@ -369,6 +369,7 @@ async function initializeTickets() {
 }
 
 // Run ONLY ONCE
+initializeTickets();
 
 function loadTicketStatus() {
 
