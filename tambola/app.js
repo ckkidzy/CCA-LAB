@@ -348,7 +348,7 @@ allCards[random].style.boxShadow="";
 
 async function initializeTickets() {
 
-    for (let i = 109; i <= 258; i++) {
+    for (let i = 289; i <= 504; i++) {
 
         await setDoc(doc(db, "tickets", String(i)), {
 
