@@ -9,7 +9,7 @@ doc,
 setDoc,
 getDoc,
 updateDoc,
-getDocs
+getDocs,
 collection,
 onSnapshot
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
@@ -223,7 +223,6 @@ reserveBtn.addEventListener("click", async function () {
         await updateDoc(ticketRef, {
             status: "reserved",
             name: nameInput,
-            phone: phoneInput,
             time: new Date().toLocaleString()
         });
 
