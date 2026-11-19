@@ -7,7 +7,9 @@ import { db } from "./firebase.js";
 import {
 doc,
 setDoc,
-getDocs,
+getDoc,
+updateDoc,
+getDocs
 collection,
 onSnapshot
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
@@ -148,37 +150,31 @@ searchBox.addEventListener("keyup", function () {
 // OPEN POPUP
 // =====================================
 
-document.addEventListener("click",function(e){
+document.addEventListener("click", function(e) {
 
-if(!e.target.classList.contains("viewTicket")) return;
+    if (!e.target.classList.contains("viewTicket")) return;
 
-const card=e.target.closest(".ticket");
+    const card = e.target.closest(".ticket");
+    selectedTicket = card.dataset.ticket;
 
-selectedTicket=card.dataset.ticket;
+    modalTitle.innerHTML = "Ticket " + selectedTicket;
+    modalImage.src = "tickets/ticket_" + selectedTicket + ".jpg";
 
-modalTitle.innerHTML="Ticket "+selectedTicket;
+    const status = card.querySelector(".ticket-status").textContent;
+    modalStatus.innerHTML = status;
 
-modalImage.src="tickets/ticket_"+selectedTicket+".jpg";
+    const bookingForm = document.getElementById("bookingForm");
 
-const status=card.querySelector(".ticket-status").textContent;
+    // Hide form if Sold OR already Reserved
+    if (status.includes("Sold") || status.includes("Reserved")) {
+        bookingForm.style.display = "none";
+    } else {
+        bookingForm.style.display = "block";
+    }
 
-modalStatus.innerHTML=status;
-
-if(status.includes("Sold")){
-
-reserveBtn.style.display="none";
-
-}
-
-else{
-
-reserveBtn.style.display="block";
-
-}
-
-modal.classList.add("show");
-
+    modal.classList.add("show");
 });
+
 // =====================================
 // CLOSE
 // =====================================
@@ -200,30 +196,61 @@ modal.classList.remove("show");
 }
 
 // =====================================
-// RESERVE BUTTON
+// RESERVE BUTTON (AUTO-LOCK)
 // =====================================
 
-reserveBtn.addEventListener("click", function () {
+reserveBtn.addEventListener("click", async function () {
 
-    const phone = "918638229523"; // <-- Replace with your WhatsApp number
+    const nameInput = document.getElementById("userName").value.trim();
 
-    const message =
+    if (!nameInput || !phoneInput) {
+        alert("Please enter your Full Name First");
+        return;
+    }
+
+    const ticketRef = doc(db, "tickets", selectedTicket);
+
+    try {
+        // 1. Double-check live status in Firebase before locking
+        const docSnap = await getDoc(ticketRef);
+        if (docSnap.exists() && docSnap.data().status !== "available") {
+            alert("Sorry! This ticket was just reserved or sold to someone else.");
+            modal.classList.remove("show");
+            return;
+        }
+
+        // 2. Immediately mark as Reserved in Firebase
+        await updateDoc(ticketRef, {
+            status: "reserved",
+            name: nameInput,
+            phone: phoneInput,
+            time: new Date().toLocaleString()
+        });
+
+        // 3. Close modal & clear inputs
+        modal.classList.remove("show");
+        document.getElementById("userName").value = "";
+
+        // 4. Open WhatsApp with their details pre-filled
+        const adminPhone = "918638229523"; // <-- Your WhatsApp number
+        const message = 
 `Hello,
 
-I would like to reserve Tambola Ticket ${selectedTicket}.
+I have reserved Tambola Ticket ${selectedTicket}.
 
-Name:
+Name: ${nameInput}
 
-Thank you.`;
+Please confirm my ticket. Thank you.`;
 
-    window.open(
+        window.open(
+            `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`,
+            "_blank"
+        );
 
-`https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
-
-"_blank"
-
-);
-
+    } catch (err) {
+        console.error(err);
+        alert("Something went wrong. Please try again.");
+    }
 });
 
 // =====================================
