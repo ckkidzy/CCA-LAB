@@ -205,7 +205,7 @@ modal.classList.remove("show");
 
 reserveBtn.addEventListener("click", function () {
 
-    const phone = "919615285738"; // <-- Replace with your WhatsApp number
+    const phone = "918638229523"; // <-- Replace with your WhatsApp number
 
     const message =
 `Hello,
@@ -213,7 +213,6 @@ reserveBtn.addEventListener("click", function () {
 I would like to reserve Tambola Ticket ${selectedTicket}.
 
 Name:
-Phone:
 
 Thank you.`;
 
