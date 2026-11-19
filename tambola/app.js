@@ -203,8 +203,8 @@ reserveBtn.addEventListener("click", async function () {
 
     const nameInput = document.getElementById("userName").value.trim();
 
-    if (!nameInput || !phoneInput) {
-        alert("Please enter your Full Name First");
+    if (!nameInput) {
+        alert("Please enter your Full Name first.");
         return;
     }
 
@@ -226,12 +226,12 @@ reserveBtn.addEventListener("click", async function () {
             time: new Date().toLocaleString()
         });
 
-        // 3. Close modal & clear inputs
+        // 3. Close modal & clear input
         modal.classList.remove("show");
         document.getElementById("userName").value = "";
 
-        // 4. Open WhatsApp with their details pre-filled
-        const adminPhone = "918638229523"; // <-- Your WhatsApp number
+        // 4. Open WhatsApp reliably (avoids pop-up blockers)
+        const adminPhone = "918638229523";
         const message = 
 `Hello,
 
@@ -241,10 +241,7 @@ Name: ${nameInput}
 
 Please confirm my ticket. Thank you.`;
 
-        window.open(
-            `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`,
-            "_blank"
-        );
+        window.location.href = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
 
     } catch (err) {
         console.error(err);
