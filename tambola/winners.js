@@ -1,82 +1,66 @@
 import { db } from "./firebase.js";
 
 import {
-doc,
-onSnapshot
+  doc,
+  onSnapshot
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
-const prizes=[
-
-"early5",
-"lucky7",
-"topLine",
-"middleLine",
-"bottomLine",
-"fourCorners",
-"star",
-"fullHouse1",
-"fullHouse2"
-
+const prizes = [
+  "early5",
+  "lucky7",
+  "topLine",
+  "middleLine",
+  "bottomLine",
+  "fourCorners",
+  "star",
+  "fullHouse1",
+  "fullHouse2"
 ];
 
 prizes.forEach(loadWinner);
 
-function loadWinner(prize){
+function loadWinner(prize) {
+  onSnapshot(doc(db, "winners", prize), (snapshot) => {
+    if (!snapshot.exists()) return;
 
-onSnapshot(
+    const data = snapshot.data();
+    const name = document.getElementById(prize + "Name");
+    const ticket = document.getElementById(prize + "Ticket");
 
-doc(db,"winners",prize),
+    if (!name || !ticket) return;
 
-(snapshot)=>{
+    const card = name.closest(".winnerCard");
 
-if(!snapshot.exists()) return;
+    // Reset size classes first
+    name.classList.remove("multi-winner", "many-winners");
+    ticket.classList.remove("multi-ticket");
 
-const data=snapshot.data();
+    if (data.name && data.ticket) {
+      name.classList.remove("waiting");
+      name.innerHTML = data.name;
+      ticket.innerHTML = "🎟️ " + data.ticket;
 
-const name=document.getElementById(prize+"Name");
+      // Shrink name font if multiple winners or long text
+      if (data.name.length > 32) {
+        name.classList.add("many-winners");
+      } else if (data.name.includes(",") || data.name.length > 16) {
+        name.classList.add("multi-winner");
+      }
 
-const ticket=document.getElementById(prize+"Ticket");
+      // Shrink ticket badge slightly if multiple tickets
+      if (String(data.ticket).includes(",")) {
+        ticket.classList.add("multi-ticket");
+      }
 
-if(!name || !ticket) return;
-
-if(data.name && data.ticket){
-
-    name.classList.remove("waiting");
-
-    name.innerHTML = data.name;
-
-    ticket.innerHTML = "🎟️" + data.ticket;
-
-const card = name.closest(".winnerCard");
-
-    card.classList.add("revealed");
-
-}
-else{
-
-    name.classList.add("waiting");
-
-    name.innerHTML = "⏳ WAITING FOR WINNER";
-
-    ticket.innerHTML = "—";
-
-const card = name.closest(".winnerCard");
-
-    card.classList.remove("revealed");
-}
-
-const card=name.closest(".winnerCard");
-
-card.classList.add("revealed");
-
-setTimeout(()=>{
-
-card.classList.remove("revealed");
-
-},1200);
-
-}
-
-);
-
+      card.classList.add("revealed");
+      setTimeout(() => {
+        card.classList.remove("revealed");
+      }, 1200);
+    } else {
+      name.classList.add("waiting");
+      name.innerHTML = "⏳ WAITING FOR WINNER";
+      ticket.innerHTML = "—";
+      card.classList.remove("revealed");
+    }
+  });
 }
